@@ -1,0 +1,67 @@
+//
+// Body
+// ====
+
+body {
+
+  // Reposition to avoid screwy animation when Persona Bar slides on screen
+  &.personabar-visible {
+    margin-left: $dnn-persona-bar-width;
+  }
+}
+
+
+
+
+//
+// Links
+// =====
+
+a {
+
+  &:focus {
+    @include focus-style();
+  }
+
+  &:not([class]) {
+    text-decoration-skip-ink: auto;
+    cursor: pointer;
+  }
+
+  &[class]:hover {
+    outline: none;
+  }
+}
+
+
+
+
+//
+// Block elements
+// ==============
+//
+// 1. Modify Bootstrap's reboot.
+// ----------------------------------------------------------------------------
+
+p,
+ol,
+ul,
+dl,
+address {
+
+  &:last-child {
+    margin-bottom: 0; // 1
+  }
+}
+
+
+
+
+//
+// Selection
+// =========
+
+::selection {
+  color: $body-color;
+  background-color: $gray-300;
+}

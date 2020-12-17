@@ -1,0 +1,82 @@
+{
+  "name": "accutheme",
+  "version": "1.0.0",
+  "description": "Starter theme for DNN Platform websites",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production gulp build",
+    "clean": "gulp clean",
+    "favicons": "gulp favicons",
+    "start": "gulp",
+    "lint:scripts": "eslint --format=pretty --fix",
+    "lint:styles": "stylelint --syntax scss",
+    "postinstall": "gulp build"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Accuraty/AccuTheme.git"
+  },
+  "author": "Accuraty Solutions",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "bootstrap-icons": "^1.2.1",
+    "flickity": "^2.2.1",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
+    "srraf": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "autoprefixer": "^10.1.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "del": "^6.0.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-formatter-pretty": "^4.0.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-real-favicon": "^0.3.2",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-stylelint": "^13.0.0",
+    "husky": "^4.3.6",
+    "imagemin-pngquant": "^9.0.1",
+    "lint-staged": "^10.5.3",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.1",
+    "postcss-clean": "^1.1.0",
+    "postcss-import": "^14.0.0",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.8.0",
+    "stylelint-config-twbs-bootstrap": "^2.1.0",
+    "stylelint-formatter-pretty": "^2.1.0",
+    "terser-webpack-plugin": "^4.2.2",
+    "webpack": "^4.44.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:scripts"
+    ],
+    "*.scss": [
+      "npm run lint:styles"
+    ]
+  }
+}

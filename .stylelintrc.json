@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "stylelint-config-twbs-bootstrap/scss"
+  ],
+  "defaultSeverity": "warning",
+  "rules": {
+    "block-no-empty": null,
+    "declaration-no-important": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "max-empty-lines": 4,
+    "order/properties-order": null,
+    "selector-class-pattern": null,
+    "selector-max-id": 1,
+    "selector-max-type": [
+      4,
+      {
+        "ignore": [
+          "next-sibling"
+        ],
+        "message": "Are you sure you need that many selectors?"
+      }
+    ],
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": [
+          "attribute",
+          "class"
+        ]
+      }
+    ],
+    "value-list-comma-newline-after": "always-multi-line",
+    "value-list-comma-space-after": "always-single-line",
+    "scss/selector-no-redundant-nesting-selector": null
+  }
+}

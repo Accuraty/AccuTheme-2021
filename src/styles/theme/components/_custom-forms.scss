@@ -1,0 +1,98 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - Form control
+//  - Label
+//  - Checkbox
+//  - Radio
+//  - Select
+//  - Range
+//  - File
+//
+// ============================================================================
+
+
+
+
+//
+// Form control
+// ============
+
+.custom-control {}
+
+.custom-control-inline {}
+
+.custom-control-input {}
+
+
+
+
+//
+// Labels
+// ======
+
+.custom-control-label {
+
+  &::before {}
+
+  &::after {}
+}
+
+
+
+
+//
+// Checkbox
+// ========
+
+.custom-checkbox {}
+
+
+
+
+//
+// Radio
+// =====
+
+.custom-radio {}
+
+
+
+
+//
+// Switch
+// ======
+
+.custom-switch {}
+
+
+
+
+//
+// Select
+// ======
+
+.custom-select {}
+
+
+
+
+//
+// File
+// ====
+
+.custom-file {}
+
+.custom-file-input {}
+
+.custom-file-label {}
+
+
+
+
+//
+// Range
+// =====
+
+.custom-range {}

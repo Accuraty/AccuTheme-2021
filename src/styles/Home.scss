@@ -1,0 +1,37 @@
+//
+// Mandatory imports
+// =================
+
+// Core Bootstrap abstracts
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// Custom theme overrides
+@import "theme/functions";
+@import "theme/variables";
+@import "theme/mixins";
+
+
+
+
+//
+// Theme overrides
+// ===============
+//
+// Quick modifications for existing elements or styles.
+//
+// 1. This id is added to the `<main>` tag in the page template, so the
+//    selector wraps around all other styles in the theme overrides section.
+//    Do not add a closing brace or move the selector.
+// ----------------------------------------------------------------------------
+
+#home { // 1
+
+  &.main {}
+} // Important! This closes `#home` and must come *after* overrides.
+
+
+
+
+// Begin adding page-specific components or new styles here ...

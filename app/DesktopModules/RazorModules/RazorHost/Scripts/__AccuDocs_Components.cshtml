@@ -1,0 +1,361 @@
+@{
+
+  var cta = new {
+    url = "https://getbootstrap.com/docs/4.5/components",
+    text = "View Bootstrap documentation"
+  };
+}
+
+<link href='@(AccuKit.SkinCssPath + "/AccuDocs.css")' rel="stylesheet">
+
+
+<div class="docs">
+  <h2>Components</h2>
+  <div class="row">
+    <div class="col col-lg-9">
+      <p>How components look in this theme.</p>
+      <p><strong>Table of contents:</strong></p>
+      <ul>
+        <li><a href="#accordion">Accordion</a></li>
+        <li><a href="#alerts">Alerts</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#cards">Cards</a></li>
+        <li><a href="#carousel">Carousel</a></li>
+        <li><a href="#dropdown">Dropdown</a></li>
+        <li><a href="#forms">Forms</a></li>
+        <li><a href="#list-group">List group</a></li>
+        <li><a href="#modal">Modal</a></li>
+        <li><a href="#pagination">Pagination</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="accordion" class="docs__group">
+    <h3>Accordion</h3>
+    <p><a href="@cta.url/collapse/#accordion-example" target="_blank">@cta.text</a></p>
+    <div class="docs__example position-relative p-4">
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Collapsible Group Item #1
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Collapsible Group Item #2
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Collapsible Group Item #3
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="alerts" class="docs__group">
+    <h3>Alerts</h3>
+    <p><a href="@cta.url/alerts" target="_blank">@cta.text</a></p>
+    <div class="docs__example position-relative p-4">
+      <div class="alert alert-primary" role="alert">
+        A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+      </div>
+      <div class="alert alert-secondary" role="alert">
+        A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+      </div>
+      <div class="alert alert-success" role="alert">
+        A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+      </div>
+      <div class="alert alert-danger" role="alert">
+        A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+      </div>
+      <div class="alert alert-warning" role="alert">
+        A simple warning alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+      </div>
+      <div class="alert alert-info" role="alert">
+        A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+      </div>
+      <div class="alert alert-light" role="alert">
+        A simple light alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+      </div>
+      <div class="alert alert-dark" role="alert">
+        A simple dark alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+      </div>
+    </div>
+  </div>
+
+
+  <div id="buttons" class="docs__group">
+    <h3>Buttons</h3>
+    <p><a href="@cta.url/buttons" target="_blank">@cta.text</a></p>
+
+    <h4 class="mt-4">Solid</h4>
+    <div class="docs__example position-relative p-4">
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-light">Light</button>
+      <button type="button" class="btn btn-dark">Dark</button>
+      <button type="button" class="btn btn-link">Link</button>
+    </div>
+
+    <h4 class="mt-4">Outline</h4>
+    <div class="docs__example position-relative p-4">
+      <button type="button" class="btn btn-outline-primary">Primary</button>
+      <button type="button" class="btn btn-outline-secondary">Secondary</button>
+      <button type="button" class="btn btn-outline-success">Success</button>
+      <button type="button" class="btn btn-outline-danger">Danger</button>
+      <button type="button" class="btn btn-outline-warning">Warning</button>
+      <button type="button" class="btn btn-outline-info">Info</button>
+      <button type="button" class="btn btn-outline-light">Light</button>
+      <button type="button" class="btn btn-outline-dark">Dark</button>
+    </div>
+  </div>
+
+
+  <div id="cards" class="docs__group">
+    <h3>Cards</h3>
+    <p><a href="@cta.url/card" target="_blank">@cta.text</a></p>
+    <div class="docs__example position-relative p-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary btn-sm">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="carousel" class="docs__group">
+    <h3>Carousel</h3>
+    <p><a href="@cta.url/carousel" target="_blank">@cta.text</a></p>
+    <div class="docs__example position-relative p-4">
+      <div id="carouselExample" class="carousel slide" data-ride="carousel" style="opacity: 1; pointer-events: auto;">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExample" data-slide-to="1"></li>
+          <li data-target="#carouselExample" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="https://via.placeholder.com/800x400?text=First+slide" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://via.placeholder.com/800x400?text=Second+slide" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://via.placeholder.com/800x400?text=Third+slide" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="dropdown" class="docs__group">
+    <h3>Dropdown</h3>
+    <p><a href="@cta.url/dropdowns" target="_blank">@cta.text</a></p>
+    <div class="docs__example position-relative p-4">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="forms" class="docs__group">
+    <h3>Forms</h3>
+    <p><a href="@cta.url/forms" target="_blank">@cta.text</a></p>
+    <h4 class="mt-4">Default</h4>
+    <div class="docs__example position-relative p-4">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+    <h4 class="mt-4">Custom Checkbox</h4>
+    <div class="docs__example position-relative p-4">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+      </div>
+    </div>
+
+    <h4 class="mt-4">Custom Radio</h4>
+    <div class="docs__example position-relative p-4">
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+      </div>
+    </div>
+
+    <h4 class="mt-4">Custom Select</h4>
+    <div class="docs__example position-relative p-4">
+      <select class="custom-select">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div id="list-group" class="docs__group">
+    <h3>List group</h3>
+    <p><a href="@cta.url/list-group" target="_blank">@cta.text</a></p>
+    <h4 class="mt-4">Basic example</h4>
+    <div class="docs__example position-relative p-4">
+      <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+
+    <h4 class="mt-4">Active items</h4>
+    <div class="docs__example position-relative p-4">
+      <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item active">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+
+    <h4 class="mt-4">Flush</h4>
+    <div class="docs__example position-relative p-4">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div id="modal" class="docs__group">
+    <h3>Modal</h3>
+    <p><a href="@cta.url/modal" target="_blank">@cta.text</a></p>
+    <div class="docs__example position-relative p-4">
+      <div class="modal" tabindex="-1" role="dialog" style="position: relative; top: auto; right: auto; bottom: auto; left: auto; z-index: 1; display: block;">
+        <div class="modal-dialog" role="document" style="margin: 0;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="pagination" class="docs__group">
+    <h3>Pagination</h3>
+    <p><a href="@cta.url/pagination" target="_blank">@cta.text</a></p>
+    <div class="docs__example position-relative p-4">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</div>

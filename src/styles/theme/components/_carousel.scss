@@ -1,0 +1,69 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - Wrapper and base styles
+//  - Carousel item
+//  - Left/right controls
+//  - Indicators
+//  - Captions
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base styles
+// =======================
+
+.carousel {}
+
+
+
+
+//
+// Carousel item
+// =============
+
+.carousel-item {}
+
+
+
+
+//
+// Left/right controls
+// ===================
+
+.carousel-control-prev,
+.carousel-control-next {}
+
+.carousel-control-prev {}
+
+.carousel-control-next {}
+
+
+
+
+//
+// Indicators
+// ==========
+
+.carousel-indicators {
+
+  li {
+
+    &::before {}
+
+    &::after {}
+  }
+}
+
+
+
+
+//
+// Captions
+// ========
+
+.carousel-caption {}

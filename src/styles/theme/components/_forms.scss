@@ -1,0 +1,110 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - Form control
+//  - Labels
+//  - Legends
+//  - Plain text
+//  - Form groups
+//  - Checkboxes and radios
+//  - Inline forms
+//
+// ============================================================================
+
+
+
+
+//
+// Form control
+// ============
+
+.form-control {}
+
+
+
+
+//
+// Labels
+// ======
+//
+// For horizontal and inline forms, when label and form controls need to align.
+// ----------------------------------------------------------------------------
+
+.col-form-label {}
+
+.col-form-label-lg {}
+
+.col-form-label-sm {}
+
+
+
+
+//
+// Legends
+// =======
+//
+// For horizontal and inline forms. When you need the legend text to
+// be the same size as regular labels — and to align with form controls.
+// ----------------------------------------------------------------------------
+
+.col-form-legend {}
+
+
+
+
+//
+// Plain text
+// ==========
+//
+// Apply class to a readonly input to make it appear like regular plain text.
+// ----------------------------------------------------------------------------
+
+.form-control-plaintext {}
+
+
+
+
+//
+// Form groups
+// ===========
+//
+// Designed to help with the organization and spacing of vertical forms. For
+// horizontal forms, use the predefined grid classes.
+// ----------------------------------------------------------------------------
+
+.form-group {}
+
+.form-text {}
+
+
+
+
+//
+// Checkboxes and radios
+// =====================
+//
+// Indent the labels to position radios/checkboxes as hanging controls.
+//
+// 1. Radios and checkboxes on the same line.
+// ----------------------------------------------------------------------------
+
+.form-check {}
+
+.form-check-label {}
+
+.form-check-input {}
+
+.form-check-inline { // 1
+
+  .form-check-label {}
+}
+
+
+
+
+//
+// Inline forms
+// ============
+
+.form-inline {}

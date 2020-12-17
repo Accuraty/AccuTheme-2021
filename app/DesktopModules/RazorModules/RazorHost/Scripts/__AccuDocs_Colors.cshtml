@@ -1,0 +1,96 @@
+@{
+
+  // If you add colors to the Sass `$colors` map,
+  // you need to add that color name to this list.
+  List<string> AllColorList = new List<string>(new string[] {
+    "blue",
+    "indigo",
+    "purple",
+    "pink",
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "teal"
+  });
+
+  // If you add colors to the Sass `$theme-colors` map,
+  // you need to add that color name to this list.
+  List<string> ThemeColorList = new List<string>(new string[] {
+    "primary",
+    "secondary",
+    "success",
+    "info",
+    "warning",
+    "danger",
+    "light",
+    "dark"
+  });
+
+  // If you add colors to the Sass `$grays` map,
+  // you need to add that color name to this list.
+  List<string> GrayColorList = new List<string>(new string[] {
+    "gray-100",
+    "gray-200",
+    "gray-300",
+    "gray-400",
+    "gray-500",
+    "gray-600",
+    "gray-700",
+    "gray-800",
+    "gray-900"
+  });
+}
+
+
+<link href='@(AccuKit.SkinCssPath + "/AccuDocs.css")' rel="stylesheet">
+
+<div class="docs">
+  <h2>Color system</h2>
+  <p>All colors are available as Sass variables and from a Sass map defined in <code>_variables.scss</code>.</p>
+  <p><strong>Table of contents:</strong></p>
+  <ul>
+    <li><a href="#all">All colors</a></li>
+    <li><a href="#theme">Theme colors</a></li>
+    <li><a href="#grays">Grays</a></li>
+  </ul>
+
+
+  <div id="all" class="docs__group">
+    <h3>All colors</h3>
+    <p>Sass map: <code>$colors</code>.</p>
+    <div class="row">
+      @foreach (string color in AllColorList) {
+        <div class="col-md-4">
+          <div class="p-3 mb-3 swatch-@color">@color</div>
+        </div>
+      }
+    </div>
+  </div>
+
+
+  <div id="theme" class="docs__group">
+    <h3>Theme colors</h3>
+    <p>Sass map: <code>$theme-colors</code>.</p>
+    <div class="row">
+      @foreach (string color in ThemeColorList) {
+        <div class="col-md-4">
+          <div class="p-3 mb-3 swatch-@color">@color</div>
+        </div>
+      }
+    </div>
+  </div>
+
+
+  <div id="grays" class="docs__group">
+    <h3>Grays</h3>
+    <p>Sass map: <code>$grays</code>.</p>
+    <div class="row">
+      <div class="col-md-4">
+        @foreach (string color in GrayColorList) {
+          <div class="p-3 swatch-@color">@color</div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

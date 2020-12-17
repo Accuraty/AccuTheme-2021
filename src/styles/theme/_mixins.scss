@@ -1,0 +1,202 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - aspect-ratio
+//  - full-bleed
+//  - plain-visited
+//  - button-variant
+//  - button-outline-variant
+//
+// ============================================================================
+
+
+
+
+//
+// Aspect Ratio
+// ============
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+}
+
+
+
+
+//
+// Focus
+// =====
+//
+// Pass "inside" as the mixin parameter for buttons and button-like elements.
+// ----------------------------------------------------------------------------
+
+@mixin focus-style($position: "outside") {
+  $offset: null;
+  @if ($position == "inside") {
+    $offset: -.375em;
+  }
+  @else {
+    $offset: .25em;
+  }
+
+  outline: 1px dotted;
+  outline-offset: $offset;
+}
+
+
+
+
+//
+// Full-Bleed utility
+// ==================
+//
+// Used to break the component out of its parent wrapper.
+//
+// Resource: https://andy-bell.design/wrote/creating-a-full-bleed-css-utility
+// ----------------------------------------------------------------------------
+
+@mixin full-bleed {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+
+//
+// Plain Visited
+// =============
+//
+// Used to style plain and `:visited` links. This mixin is patterened off of
+// Bootstrap's hover mixins (`_hover.scss`).
+//
+// Why do we need this? Great question! Because we have to override DNN and the
+// way it sets anchor styles. Currently in `default.css` line 297 (DNN 7).
+// ----------------------------------------------------------------------------
+
+@mixin plain-visited {
+  &,
+  &:visited {
+    @content;
+  }
+}
+
+
+
+
+//
+// Buttons
+// =======
+//
+// Both mixins are taken from Bootstrap (`mixins/_buttons.scss`) because we
+// have to extend the color property to work for both plain and visited links
+// for the same reason as needing the custom `plain-visited` mixin above.
+//
+// 1. This line replaces the default `color` property from Bootstrap's mixin.
+// ----------------------------------------------------------------------------
+
+@mixin button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%)) {
+  @include plain-visited() { color: color-yiq($background); } // 1
+  @include gradient-bg($background);
+  border-color: $border;
+  @include box-shadow($btn-box-shadow);
+
+  @include hover() {
+    @include plain-visited() { color: color-yiq($background); } // 1
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+  }
+
+  &:focus,
+  &.focus {
+    @include plain-visited() { color: color-yiq($hover-background); } // 1
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+    @if $enable-shadows {
+      @include box-shadow($btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5));
+    } @else {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
+    }
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    @include plain-visited() { color: color-yiq($background); } // 1
+    background-color: $background;
+    border-color: $border;
+    // Remove CSS gradients if they're enabled
+    @if $enable-gradients {
+      background-image: none;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    @include plain-visited() { color: color-yiq($active-background); } // 1
+    background-color: $active-background;
+    @if $enable-gradients {
+      background-image: none; // Remove the gradient for the pressed/active state
+    }
+    border-color: $active-border;
+
+    &:focus {
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        @include box-shadow($btn-active-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5));
+      } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
+        box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
+      }
+    }
+  }
+}
+
+@mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color) {
+  @include plain-visited() { color: $color; } // 1
+  border-color: $color;
+
+  @include hover() {
+    @include plain-visited() { color: $color-hover; } // 1
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+  }
+
+  &.disabled,
+  &:disabled {
+    @include plain-visited() { color: $color; } // 1
+    background-color: transparent;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    @include plain-visited() { color: color-yiq($active-background); } // 1
+    background-color: $active-background;
+    border-color: $active-border;
+
+    &:focus {
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        @include box-shadow($btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($color, .5));
+      } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
+        box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+      }
+    }
+  }
+}

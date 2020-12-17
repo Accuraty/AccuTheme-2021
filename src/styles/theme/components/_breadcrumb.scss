@@ -1,0 +1,136 @@
+// ============================================================================
+//
+//  For consistency, all skin and theme objects created by DNN use the same
+//  pattern, `.Dnn{Object}`, and BEM-like structure that we use for modules.
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Wrapper and base class
+//  - Separator between breadcrumbs
+//  - Individual links
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+//
+// 1. Set the color on the wrapper so the other elements will inherit it and
+//    ensure links, text, and separators are all the same color.
+//
+// 2. Remove extra space in between `<span>` tags, which occurs when manually
+//    creating the breadcrumb structure (not using the `<dnn:Breadcrumb>` tag).
+//
+// 3. Have items wrap to the next line so long words don't break into columns.
+// ----------------------------------------------------------------------------
+
+.DnnBreadcrumb {
+  margin-bottom: $breadcrumb-margin-bottom;
+  color: $breadcrumb-color; // 1
+
+  span {
+    display: inline-flex; // 2
+    flex-wrap: wrap; // 3
+  }
+}
+
+
+
+
+//
+// Separator between breadcrumbs
+// =============================
+//
+// Use these styles only if you set the `Separator` attribute on the
+// `<dnn:Breadcrumb>` tag to empty. Example: `<dnn:Breadcrumb Separator="">`
+//
+// 1. The HTML created by DNN's breadcrumb skin object wraps each breadcrumb
+//    in layers of `<span>` tags, so we target the last one — which has the
+//    attribute `itemprop` — via CSS' attribute selector.
+//
+// 2. Create a local variable for the space around each separator. We are
+//    using the global `$spacer` value as a base to stay consistent.
+//
+// 3. Since the `<span>` tags around each breadcrumb are siblings, we target
+//    all but the first one to add space between each item.
+//
+// 4. Before each tag, we add a custom separator using the `content` property.
+//
+//    - Note: The commented-out code below uses Font Awesome's right angle
+//      icon, so don't use this unless Font Awesome is in this project.
+//
+// 5. Font Awesome v5 searches for pseudo-elements that use Font Awesome and
+//    injects the `<svg>` in the markup. However, it does not replace the
+//    pseudo-element, so we have to hide the `::before` and add styles for the
+//    `<svg>` tag that gets added.
+//
+//    Reference: https://fontawesome.com/how-to-use/svg-with-js#pseudo-elements
+// ----------------------------------------------------------------------------
+
+.DnnBreadcrumb span[itemprop="itemListElement"] { // 1
+  $separator-space: ($spacer / 2); // 2
+
+  &:not(:first-child) { // 3
+    margin-left: $separator-space;
+
+    &::before { // 4
+      margin-right: $separator-space;
+      color: $breadcrumb-divider-color;
+      content: $breadcrumb-divider; // 4
+
+      // font-family: "FontAwesome"; // 4*
+      // font-family: "Font Awesome 5 Regular"; // 5
+      // content: "\f105"; // 4*
+      // display: none; // 5
+    }
+
+    .svg-inline--fa { // 5
+      // color: $breadcrumb-divider-color;
+      // margin-right: $separator-space;
+    }
+  }
+}
+
+
+
+
+//
+// Individual links
+// ================
+//
+// This class is added to the object via its ASCX token's `CssClass` attribute.
+// Example: `<dnn:Breadcrumb CssClass="DnnBreadcrumb__item">`
+//
+// 1. Because DNN's `default.css` explicitly sets anchor styles to match their
+//    visited state, which means we have to explicitly override this, we have
+//    to set the color to both the class and its visited state.
+//
+// 2. Target all but the last `itemListElement` in the breadcrumb so we can
+//    control the link color.
+// --------------------------------------------------------------------------
+
+.DnnBreadcrumb__item {
+
+  @include plain-visited() { // 1
+    color: inherit;
+  }
+
+  &.active {
+    color: $breadcrumb-active-color;
+  }
+
+  span[itemprop="itemListElement"]:last-child & { // 2
+    color: $breadcrumb-active-color;
+  }
+}
+
+a.DnnBreadcrumb__item {
+  @include hover-focus-active() {
+    color: $breadcrumb-hover-color;
+  }
+}

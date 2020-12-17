@@ -1,0 +1,5 @@
+**/*.scss
+**/*.css
+**/*.htm
+**/dist/
+README.md

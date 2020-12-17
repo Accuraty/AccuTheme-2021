@@ -1,0 +1,25 @@
+// Add `.swatch-*` classes for `$color` map
+@each $key, $value in $colors {
+  .swatch-#{$key} {
+    background-color: $value;
+    color: color-yiq($value);
+  }
+}
+
+
+// Add `.swatch-*` classes for `$theme-colors` map
+@each $key, $value in $theme-colors {
+  .swatch-#{$key} {
+    background-color: $value;
+    color: color-yiq($value);
+  }
+}
+
+
+// Add `.swatch-*` classes for `$grays` map
+@each $key, $value in $grays {
+  .swatch-gray-#{$key} {
+    background-color: $value;
+    color: color-yiq($value);
+  }
+}

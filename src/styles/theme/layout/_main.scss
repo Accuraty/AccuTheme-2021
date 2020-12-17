@@ -1,0 +1,30 @@
+//
+// Wrapper and base class
+// ======================
+
+$main-offset-top-xs: map-get($spacers, 4);
+$main-offset-top-md: map-get($spacers, 5);
+
+.main {
+  padding-top: $main-offset-top-xs;
+  min-height: 60vh;
+
+  @include media-breakpoint-up(md) {
+    padding-top: $main-offset-top-md;
+  }
+
+  // Reposition `.main` if `.header` is fixed to top.
+  // This requires `<main>` to be a sibling of `<header>`.
+  .header.fixed-top + & {
+    padding-top: add($navbar-height-xs, $main-offset-top-xs);
+
+    @include media-breakpoint-up(md) {
+      padding-top: add($navbar-height-md, $main-offset-top-md);
+    }
+  }
+
+  // Reposition `.main` when DNN is in edit mode.
+  .dnnEditState & {
+    margin-top: $navbar-height-md;
+  }
+}

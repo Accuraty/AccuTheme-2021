@@ -1,0 +1,44 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - Wrapper and base class
+//  - Interactive list items
+//  - Basic list items
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+
+.list-group {}
+
+
+
+
+//
+// Interactive list items
+// ======================
+
+.list-group-item-action {
+
+  @include plain-visited() {
+    color: $list-group-action-color;
+  }
+
+  @include hover-focus() {
+    color: $list-group-action-hover-color;
+  }
+}
+
+
+
+//
+// Basic list items
+// ================
+
+.list-group-item {}

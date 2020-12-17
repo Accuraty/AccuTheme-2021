@@ -1,0 +1,117 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - Wrapper and base class
+//  - Navbar brand
+//  - Navbar text
+//  - Responsive navbar
+//  - Admin menu
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+
+.navbar {
+  min-height: $navbar-height-xs;
+
+  @include media-breakpoint-up(md) {
+    min-height: $navbar-height-md;
+  }
+}
+
+
+
+
+//
+// Navbar brand
+// ============
+//
+// Used for brand, project, or site name.
+// ----------------------------------------------------------------------------
+
+.navbar-brand {
+  width: 114px;
+
+  @include media-breakpoint-up(md) {
+    width: 160px;
+  }
+}
+
+
+
+
+//
+// Navbar nav
+// ==========
+//
+// Custom navbar navigation. Doesn't require `.nav`, but does use `.nav-link`.
+// ----------------------------------------------------------------------------
+
+.navbar-nav {
+
+  .nav-item {
+    z-index: 1; // Don't remove. Needed for default theme customizations.
+  }
+
+  .nav-link {}
+}
+
+
+
+
+//
+// Navbar text
+// ===========
+//
+// Navbars may contain bits of text. This class adjust alignment and spacing.
+// ----------------------------------------------------------------------------
+
+.navbar-text {}
+
+
+
+
+//
+// Responsive navbar
+// =================
+//
+// Custom styles for responsive collapsing and toggling of navbar contents.
+// Powered by the collapse Bootstrap JavaScript plugin.
+//
+// 1. Button for toggling the navbar when in its collapsed state.
+//
+// 2. This element is separated so we can easily override it with another icon
+//    or image file as needed.
+// ----------------------------------------------------------------------------
+
+.navbar-toggler {} // 1
+
+.navbar-toggler-icon {} // 2
+
+
+
+
+//
+// Site menu
+// =========
+//
+// Site management menu in the navbar. Independent of the primary nav.
+// ----------------------------------------------------------------------------
+
+#site-menu {
+
+  .nav-link {
+    color: $white;
+    background-color: $link-color;
+
+    @include hover-focus() {
+      background-color: $link-hover-color;
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "impliedStrict": true
+    },
+    "sourceType": "module"
+  },
+  "rules": {
+    "array-callback-return": "error",
+    "arrow-body-style": [
+      "warn",
+      "as-needed"
+    ],
+    "arrow-parens": "off",
+    "block-scoped-var": "error",
+    "callback-return": "off",
+    "complexity": "error",
+    "consistent-return": "error",
+    "curly": "off",
+    "default-case": "error",
+    "dot-location": [
+      "warn",
+      "property"
+    ],
+    "dot-notation": "warn",
+    "eqeqeq": [
+      "warn",
+      "smart"
+    ],
+    "global-require": "warn",
+    "guard-for-in": "error",
+    "handle-callback-err": "warn",
+    "new-parens": "warn",
+    "no-alert": "warn",
+    "no-array-constructor": "warn",
+    "no-await-in-loop": "warn",
+    "no-caller": "warn",
+    "no-catch-shadow": "warn",
+    "no-cond-assign": [
+      "warn",
+      "except-parens"
+    ],
+    "no-confusing-arrow": "warn",
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "info",
+          "error"
+        ]
+      }
+    ],
+    "no-delete-var": "warn",
+    "no-dupe-args": "warn",
+    "no-dupe-class-members": "warn",
+    "no-dupe-keys": "warn",
+    "no-else-return": "warn",
+    "no-empty-function": "warn",
+    "no-eq-null": "warn",
+    "no-eval": "warn",
+    "no-extend-native": "warn",
+    "no-extra-bind": "warn",
+    "no-extra-label": "warn",
+    "no-fallthrough": "warn",
+    "no-func-assign": "warn",
+    "no-implied-eval": "warn",
+    "no-invalid-regexp": "warn",
+    "no-iterator": "warn",
+    "no-label-var": "warn",
+    "no-labels": [
+      "warn",
+      {
+        "allowLoop": true,
+        "allowSwitch": false
+      }
+    ],
+    "no-lone-blocks": "warn",
+    "no-loop-func": "warn",
+    "no-mixed-requires": "warn",
+    "no-multi-spaces": [
+      "error",
+      {
+        "ignoreEOLComments": true,
+        "exceptions": {
+          "AssignmentExpression": true,
+          "ArrowFunctionExpression": true,
+          "CallExpression": true,
+          "VariableDeclarator": true
+        }
+      }
+    ],
+    "no-multi-str": "warn",
+    "no-new": "off",
+    "no-new-func": "warn",
+    "no-new-object": "warn",
+    "no-new-symbol": "warn",
+    "no-new-wrappers": "warn",
+    "no-obj-calls": "warn",
+    "no-octal": "warn",
+    "no-octal-escape": "warn",
+    "no-param-reassign": [
+      "warn",
+      {
+        "props": false
+      }
+    ],
+    "no-proto": "warn",
+    "no-prototype-builtins": "warn",
+    "no-restricted-globals": "warn",
+    "no-restricted-properties": "warn",
+    "no-return-assign": [
+      "warn",
+      "except-parens"
+    ],
+    "no-return-await": "warn",
+    "no-script-url": "warn",
+    "no-self-compare": "warn",
+    "no-sequences": "warn",
+    "no-shadow-restricted-names": "error",
+    "no-template-curly-in-string": "warn",
+    "no-throw-literal": "warn",
+    "no-undef-init": "error",
+    "no-undefined": "error",
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTaggedTemplates": true
+      }
+    ],
+    "no-unused-vars": [
+      "warn",
+      {
+        "ignoreRestSiblings": true,
+        "argsIgnorePattern": "res|next|^err"
+      }
+    ],
+    "no-useless-computed-key": "warn",
+    "no-useless-concat": "warn",
+    "no-useless-constructor": "warn",
+    "no-useless-escape": "warn",
+    "no-useless-rename": [
+      "warn",
+      {
+        "ignoreDestructuring": false,
+        "ignoreImport": false,
+        "ignoreExport": false
+      }
+    ],
+    "no-var": "warn",
+    "no-with": "warn",
+    "no-whitespace-before-property": "warn",
+    "prefer-const": [
+      "warn",
+      {
+        "destructuring": "all"
+      }
+    ],
+    "prefer-spread": "warn",
+    "prefer-template": "warn",
+    "rest-spread-spacing": [
+      "warn",
+      "never"
+    ],
+    "require-await": "warn",
+    "strict": [
+      "warn",
+      "never"
+    ],
+    "valid-typeof": "warn",
+    "vars-on-top": "warn",
+    "wrap-iife": "off",
+    "yoda": "warn"
+  }
+}

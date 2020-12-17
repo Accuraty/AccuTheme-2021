@@ -1,0 +1,126 @@
+// stylelint-disable selector-list-comma-newline-after
+
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - Headings
+//  - Lead paragraph
+//  - Display type
+//  - Horizontal rules
+//  - Emphasis
+//  - Lists
+//  - Blockquote
+//
+// ============================================================================
+
+
+
+
+//
+// Headings
+// ========
+//
+// 1. When a heading is used as a link, keep the style consistent with other
+//    headings. Why? Headings should separate and organize content. Using
+//    inline text or buttons for links is generally a better approach.
+// ----------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+
+  a {
+    font-weight: inherit !important; // 1
+
+    @include plain-visited() {
+      color: inherit; // 1
+    }
+
+    @include hover-focus() {
+      color: $link-color;
+    }
+  }
+}
+
+// h1, .h1 {}
+
+h2, .h2 {
+  font-weight: $font-weight-bold;
+}
+
+// h3, .h3 {}
+
+// h4, .h4 {}
+
+// h5, .h5 {}
+
+// h6, .h6 {}
+
+
+
+
+//
+// Lead paragraph
+// ==============
+
+// .lead {}
+
+
+
+
+//
+// Display type
+// ============
+
+// .display-1 {}
+// .display-2 {}
+// .display-3 {}
+// .display-4 {}
+
+
+
+
+//
+// Horizontal rules
+// ================
+
+// hr {}
+
+
+
+
+//
+// Emphasis
+// ========
+
+// small,
+// .small {}
+
+// mark,
+// .mark {}
+
+
+
+
+//
+// Lists
+// =====
+
+// .list-unstyled {}
+
+// .list-inline {}
+
+// .list-inline-item {}
+
+
+
+
+//
+// Blockquote
+// ==========
+
+.blockquote {
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+// .blockquote-footer {}

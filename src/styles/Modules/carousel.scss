@@ -1,0 +1,144 @@
+// ============================================================================
+//
+//  HEADS UP!
+//
+//  This module uses Flickity as the carousel instead of Boostrap's component,
+//  so the classes and styles are independent from what you'll see in the
+//  `_carousel.scss` partial. The one exception is the base class: `.carousel`.
+//
+//  Library: Flickity
+//  Version: 2.2.1
+//  Author: Metafizzy
+//  Author URI: https://flickity.metafizzy.co
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Mandatory imports
+//  - Wrapper and base class
+//  - Flickity-specific
+//     - Controls
+//     - Indicators
+//  - Carousel cell
+//
+// ============================================================================
+
+
+
+
+//
+// Mandatory imports
+// =================
+
+// Core Bootstrap abstracts
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// Custom theme overrides
+@import "theme/functions";
+@import "theme/variables";
+@import "theme/mixins";
+
+// Core Flickity styles
+@import "flickity/dist/flickity";
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+
+.carousel {
+  opacity: 0;
+  transition-timing-function: $transition-timing-function;
+  transition-duration: $transition-duration;
+  transition-property: opacity;
+
+  &:not(.flickity-enabled) {
+    pointer-events: none;
+  }
+
+  &.flickity-enabled {
+    opacity: 1;
+  }
+}
+
+
+
+
+//
+// Flickity-specific styles
+// ========================
+//
+// These classes and the markup are only added when Flickity is initialized.
+//   - Controls (http://flickity.metafizzy.co/style.html#previous-next-buttons)
+//   - Indicators (http://flickity.metafizzy.co/style.html#page-dots)
+// ----------------------------------------------------------------------------
+
+// Controls
+
+.flickity-button {
+  color: $body-color;
+  background-color: rgba($white, .75);
+  transition-timing-function: $transition-timing-function;
+  transition-duration: $transition-duration;
+  transition-property: background-color;
+
+  @include hover-focus() {
+    background-color: $white;
+  }
+}
+
+.flickity-button-icon {}
+
+.flickity-prev-next-button {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: .5rem;
+
+  .flickity-button-icon {
+    position: initial;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+  }
+
+  &.previous {
+    left: 0;
+  }
+
+  &.next {
+    right: 0;
+  }
+}
+
+// Indicators
+
+.flickity-page-dots {
+  bottom: -1.25rem;
+
+  .dot {
+    width: .75rem;
+    height: .75rem;
+    margin: 0 .5rem;
+    background-color: $body-color;
+
+    &.is-selected {}
+  }
+}
+
+
+
+
+//
+// Carousel cell
+// =============
+
+.carousel-cell {
+  width: 100%;
+  height: auto;
+}

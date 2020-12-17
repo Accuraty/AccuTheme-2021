@@ -1,0 +1,187 @@
+@using DotNetNuke.Web.DDRMenu;
+@using System.Dynamic;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+
+@functions {
+
+  /*
+    Menu config
+    ===
+    Placed in `@functions` so `@helper` methods can access to these variables.
+
+    1. If true, add the `.ml-auto` util class to `<ul class="navbar-nav"`>.
+       No class is added if false because left align is default behavior.
+
+    2. If false, no markup will be generated. Used in `RenderNodes` helper.
+
+    3. If false, no markup will be generated. Used in `RenderChildren` helper.
+
+    4. To use a custom SVG icon instead of the Bootstrap default.
+    **************************************************************************/
+  private bool NAV_IS_ALIGNED_RIGHT = false; // 1
+  private bool INCLUDE_DROPDOWN_MENUS = false; // 2
+  private bool INCLUDE_NESTED_DROPDOWNS = false; // 3
+  private bool USE_CUSTOM_DROPDOWN_ICON = false; // 4
+
+
+  /*
+    Target attributes
+    ===
+    If needed, creates the `target` and `rel` attributes for the `<a>` tag.
+
+    1. If there is no `node.Target` value, no `target` attribute neccessary.
+
+    2. Add `rel` with proper values if the link opens in a new window.
+       http://developer.mozilla.org/HTML/Element/a#Security_and_privacy_concerns
+    **************************************************************************/
+  private HtmlString buildTargetAttribute(MenuNode node) {
+    var target = node.Target;
+    var targetString = !String.IsNullOrEmpty(target) ? ("target=\"" + target + "\"") : ""; // 1
+
+    if (target == "_blank") {
+      targetString += " rel=\"noopener noreferrer\""; // 2
+    }
+
+    return new HtmlString(targetString);
+  }
+
+
+  /*
+    Dropdown attributes
+    ===
+    If needed, builds the attributes Bootstrap's dropdown plugin requires.
+    **************************************************************************/
+  private HtmlString buildDropdownAttributes(MenuNode node) {
+    var attributeString = INCLUDE_DROPDOWN_MENUS && node.HasChildren() ? ("id=\"tab-" + node.TabId + "-dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"") : "";
+
+    return new HtmlString(attributeString);
+  }
+}
+
+
+@*
+  Top-level menu
+  ===
+  Builds a Bootstrap `.navbar-nav` component.
+
+  The pattern for handling CSS classes:
+  - Create lists of strings; initialize with the required classes.
+  - Add classes to the list based on conditions.
+  - Join the list to create the CSS variable used in the markup.
+
+  Things to note:
+  - The `INCLUDE_DROPDOWN_MENUS` variable is used here.
+  - The `USE_CUSTOM_DROPDOWN_ICON` variable is used here.
+  ****************************************************************************@
+@helper RenderNodes(IList<MenuNode> nodes) {
+  if (nodes.Count > 0) {
+    var navClasses = new List<string> { "navbar-nav" };
+    if (NAV_IS_ALIGNED_RIGHT) {
+      navClasses.Add("ml-auto");
+    }
+    var navCss = String.Join(" ", navClasses);
+
+    <ul class="@navCss">
+      @foreach (var node in nodes) {
+        var itemClasses = new List<string> { "nav-item" };
+        var linkClasses = new List<string> { "nav-link" };
+
+        if (node.Breadcrumb) {
+          itemClasses.Add("active");
+        }
+
+        if (INCLUDE_DROPDOWN_MENUS && node.HasChildren()) {
+          itemClasses.Add("dropdown");
+          linkClasses.Add("dropdown-toggle d-inline-flex align-items-center");
+
+          if (USE_CUSTOM_DROPDOWN_ICON) {
+            linkClasses.Add("dropdown-toggle--custom");
+          }
+        }
+
+        var itemCss = String.Join(" ", itemClasses);
+        var linkCss = String.Join(" ", linkClasses);
+        var linkHref = node.Enabled ? node.Url : "#";
+        var targetAttributes = buildTargetAttribute(node);
+        var dropdownAttributes = buildDropdownAttributes(node);
+
+        <li id="tab-@node.TabId" class="@itemCss">
+          <a class="@linkCss" href="@linkHref" @targetAttributes @dropdownAttributes>
+            <span>@node.Text</span>
+            @if (INCLUDE_DROPDOWN_MENUS && node.HasChildren() && USE_CUSTOM_DROPDOWN_ICON) {
+              <span class="ml-2 ml-lg-1">
+                @AccuKit.BootstrapIcon("Chevron Down")
+              </span>
+            }
+          </a>
+          @if (INCLUDE_DROPDOWN_MENUS) {
+            @RenderChildren(node)
+          }
+        </li>
+      }
+    </ul>
+  }
+}
+
+
+@*
+  Dropdown menus
+  ===
+  Builds a Bootstrap `.dropdown-menu` component.
+
+  Things to note:
+  - Similar to `RenderNodes`, but CSS and settings are key differences.
+  - The `INCLUDE_NESTED_DROPDOWN_MENUS` variable is used here.
+  - If using nested dropdowns, this helper recursively calls itself.
+
+  1. If the nav is aligned right and the last node has a dropdown menu,
+     the menu will likely bleed over the edge of the window. This isn't
+     guaranteed to always fix the issue, but it's a starting point.
+  ****************************************************************************@
+@helper RenderChildren(MenuNode node) {
+  var children = node.Children;
+  if (children.Count > 0) {
+    var menuClasses = new List<string> { "dropdown-menu" };
+    if (NAV_IS_ALIGNED_RIGHT && node.Last) {
+      menuClasses.Add("dropdown-menu-right"); // 1
+    }
+    var menuCss = String.Join(" ", menuClasses);
+
+    <ul class="@menuCss" aria-labelledby="tab-@node.TabId-dropdown-toggle">
+      @foreach (var child in children) {
+        var itemClasses = new List<string> {};
+        var linkClasses = new List<string> { "dropdown-item" };
+
+        if (child.Breadcrumb) {
+          linkClasses.Add("active");
+        }
+
+        if (INCLUDE_NESTED_DROPDOWNS && child.HasChildren()) {
+          itemClasses.Add("dropdown");
+          linkClasses.Add("dropdown-toggle");
+        }
+
+        var itemCss = String.Join(" ", itemClasses);
+        var linkCss = String.Join(" ", linkClasses);
+        var linkHref = child.Enabled ? child.Url : "#";
+        var targetAttributes = buildTargetAttribute(child);
+        var dropdownAttributes = INCLUDE_NESTED_DROPDOWNS ? buildDropdownAttributes(child) : null;
+
+        <li class="@itemCss">
+          <a class="@linkCss" href="@linkHref" @targetAttributes @dropdownAttributes>@child.Text</a>
+          @if (INCLUDE_NESTED_DROPDOWNS) {
+            @RenderChildren(child)
+          }
+        </li>
+      }
+    </ul>
+  }
+}
+
+
+@*
+  Init
+  ===
+  Trigger the magic.
+  ****************************************************************************@
+@RenderNodes(Model.Source.root.Children)

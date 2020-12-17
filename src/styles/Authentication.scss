@@ -1,0 +1,73 @@
+//
+// Mandatory imports
+// =================
+
+// Core Bootstrap abstracts
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// Custom theme overrides
+@import "theme/functions";
+@import "theme/variables";
+@import "theme/mixins";
+
+
+
+
+//
+// Wrapper and base ID
+// ===================
+
+#authentication { // 1
+  min-height: 100vh;
+  background-color: $gray-200;
+}
+
+
+
+
+//
+// Auth form
+// =========
+
+.auth-form {
+  max-width: 480px;
+  transition-timing-function: $transition-timing-function;
+  transition-duration: $transition-duration * 2;
+  transition-property: transform, opacity;
+
+  &:not(.is-visible) {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(.25rem) scale(.999);
+  }
+}
+
+
+
+
+//
+// Header
+// ======
+
+.auth-form__header {
+
+  h2 {
+    @include font-size(1.75rem);
+  }
+
+  p {
+    color: $gray-600;
+    font-size: $font-size-sm;
+  }
+}
+
+
+
+
+//
+// Content
+// =======
+
+.auth-form__content {}

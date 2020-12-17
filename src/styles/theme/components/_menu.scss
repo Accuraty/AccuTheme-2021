@@ -1,0 +1,199 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - Base styles and wrapper
+//  - Label
+//  - List
+//  - Item
+//  - Link
+//
+// ============================================================================
+
+
+
+
+//
+// Base styles and wrapper
+// =======================
+
+.menu {}
+
+
+
+
+//
+// Label
+// =====
+
+.menu__label {
+  font-size: .875em;
+  color: $gray-500;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}
+
+
+
+
+//
+// List
+// ===
+
+.menu__list {
+  line-height: 1.25;
+
+  ul {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+}
+
+
+
+
+//
+// Item
+// ====
+//
+// 1. Make links full width if they're the immediate children of `.menu__item`.
+//    We assume `.menu__link` will be nested inside `.menu__item__header`, but
+//    if not, this will adjust the display accordingly.
+// ----------------------------------------------------------------------------
+
+.menu__item {
+  position: relative;
+
+  &.active {
+
+    .badge {
+      background-color: darken($primary, 10%) !important;
+    }
+  }
+
+  ul {
+    padding-left: .75em;
+    margin: .75em 0 .75em .75em !important;
+    border-left: 1px solid $border-color;
+  }
+
+  & > .menu__link { // 1
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+
+
+//
+// Item header
+// ===========
+//
+// Wraps the `.menu__link` and, if it exists, the `.menu__toggle`.
+// ----------------------------------------------------------------------------
+
+.menu__item__header {
+  position: relative;
+}
+
+
+
+
+//
+// Toggle
+// ======
+//
+// 1. Use `!important` to override `a:not([href])` rule in Bootstrap's reboot.
+// ----------------------------------------------------------------------------
+
+.menu__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: $gray-500 !important; // 1
+  cursor: pointer;
+
+  @include hover-focus() {
+    color: $link-color !important; // 1
+  }
+}
+
+
+
+
+//
+// Item toggle
+// ===========
+
+.menu__toggle__icon {
+  display: flex;
+  align-items: center;
+  padding: 0 .75em;
+  font-size: .875em;
+  pointer-events: none;
+  transition-timing-function: $transition-timing-function;
+  transition-duration: 100ms;
+  transition-property: transform;
+
+  .show > .menu__item__header & {
+    transform: rotate(180deg);
+  }
+}
+
+
+
+
+//
+// Link
+// ====
+//
+// 1. We assume `.menu__link` will be nested in `.menu__item__header`.
+// ----------------------------------------------------------------------------
+
+.menu__link {
+  position: relative;
+  display: inline-block; // 1
+  padding: .5em .75em;
+  font-weight: $font-weight-medium;
+  user-select: none;
+  transition-property: background-color, color;
+
+  @include plain-visited() {
+    color: $gray-700;
+  }
+
+  @include border-radius($border-radius-sm);
+
+  @include hover-focus() {
+    color: $link-color;
+    background-color: $gray-200;
+  }
+
+  .badge {
+    font-variant-numeric: tabular-nums;
+    padding-bottom: calc(#{$badge-padding-y} * 1.1);
+  }
+}
+
+.menu__link.active,
+.menu__item.active > .menu__item__header > .menu__link {
+  color: $component-active-color;
+  background-color: $component-active-bg;
+}

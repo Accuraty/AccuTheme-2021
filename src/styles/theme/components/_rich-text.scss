@@ -1,0 +1,127 @@
+//
+// Rich Text base class
+// ====================
+//
+// Required: Wrap your content with the `.rich-text` class.
+//
+// 1. Increase the size of text.
+//
+// 2. Add extra top margin, as long as they aren't the first child.
+//
+// 3. List items are too close together compared to all other body text
+//    elements, so add a little margin between siblings.
+// ----------------------------------------------------------------------------
+
+.rich-text {
+  font-size: 1.075rem; // 1
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.125rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.175rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 1.25rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    font-size: 1.375rem;
+  }
+
+
+  // Headings
+
+  h2:not(:first-child) {
+    margin-top: 5rem; // 2
+  }
+
+  h3:not(:first-child) {
+    margin-top: 3rem; // 2
+  }
+
+  h4:not(:first-child) {
+    margin-top: 1.5rem; // 2
+  }
+
+
+  // Links
+
+  a:not([class]) {
+    font-weight: $font-weight-medium;
+
+    &:hover {
+      text-decoration-color: currentColor;
+    }
+  }
+
+
+  // Lists
+
+  ol,
+  ul {
+    padding-left: ($paragraph-margin-bottom * 2);
+
+    ol,
+    ul {
+      margin-top: ($paragraph-margin-bottom / 2);
+    }
+
+    ol {
+      list-style-type: lower-alpha;
+    }
+
+    ul {
+      list-style-type: circle;
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  li + li {
+    margin-top: ($paragraph-margin-bottom / 2); // 3
+  }
+
+
+  // Quotes
+
+  blockquote {
+    padding: 1rem;
+    font-size: $blockquote-font-size;
+    font-style: $blockquote-font-style;
+    background-color: $blockquote-bg-color;
+    border-left: $blockquote-border-width solid $blockquote-border-color;
+
+    @include media-breakpoint-up(md) {
+      padding: 1.5rem;
+    }
+
+    footer {
+      font-size: $blockquote-small-font-size;
+      color: $blockquote-small-color;
+
+      &::before {
+        content: "\2014 \00A0"; // em dash, nbspreb
+      }
+
+      a {
+
+        @include plain-visited() {
+          color: $blockquote-small-color;
+        }
+
+        @include hover-focus() {
+          color: $link-hover-color;
+        }
+      }
+    }
+  }
+}

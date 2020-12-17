@@ -1,0 +1,68 @@
+//
+// Mandatory imports
+// =================
+
+// Core Bootstrap abstracts
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// Custom theme overrides
+@import "theme/functions";
+@import "theme/variables";
+@import "theme/mixins";
+
+// @import "theme/docs/clipboard-js";
+// @import "theme/docs/syntax";
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+
+.docs {
+
+  .list-group {
+    max-width: 400px;
+  }
+}
+
+
+
+
+//
+// Group
+// =====
+
+.docs__group {
+  margin: 6rem 0;
+}
+
+
+
+
+//
+// Example
+// =======
+
+.docs__example {
+  border: .2rem solid darken($gray-100, 5%);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .05);
+}
+
+
+
+
+//
+// Code block
+// ==========
+
+.docs__code {
+  background: $gray-100;
+
+  .docs_example + & {
+    margin-top: 0;
+  }
+}

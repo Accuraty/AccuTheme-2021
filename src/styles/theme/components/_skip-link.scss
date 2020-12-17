@@ -1,0 +1,24 @@
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  &:not(:focus) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+  }
+
+  &:focus {
+    z-index: $zindex-tooltip;
+  }
+
+  // Reposition fixed `.header` so DNN Persona Bar doesn't overlap it
+  .personabar-visible & {
+    left: calc(1rem + #{$dnn-persona-bar-width});
+  }
+}

@@ -1,0 +1,103 @@
+//
+// Integrate Bootstrap and custom theme
+// ====================================
+
+// Core Bootstrap functions
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/mixins";
+
+// Custom theme overrides
+@import "theme/functions";
+@import "theme/variables";
+@import "theme/mixins";
+
+// Reset DNN styles
+@import "theme/base/dnn-reset";
+
+// Use just what you need from Bootstrap
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/code";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/input-group";
+@import "bootstrap/scss/custom-forms";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/jumbotron";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/progress";
+@import "bootstrap/scss/media";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/print";
+
+
+
+
+//
+// Add custom theme code base
+// ==========================
+
+@import "theme/base/fonts";
+@import "theme/base/base";
+@import "theme/base/type";
+@import "theme/base/images";
+@import "theme/base/grid";
+@import "theme/base/tables";
+@import "theme/base/svg";
+
+// overrides for core Bootstrap components first ...
+@import "theme/components/forms";
+@import "theme/components/custom-forms";
+@import "theme/components/buttons";
+@import "theme/components/dropdown";
+@import "theme/components/nav";
+@import "theme/components/navbar";
+@import "theme/components/card";
+@import "theme/components/breadcrumb";
+@import "theme/components/pagination";
+@import "theme/components/badge";
+@import "theme/components/jumbotron";
+@import "theme/components/alert";
+@import "theme/components/progress";
+@import "theme/components/list-group";
+@import "theme/components/close";
+@import "theme/components/toasts";
+@import "theme/components/modal";
+@import "theme/components/tooltip";
+@import "theme/components/popover";
+@import "theme/components/carousel";
+@import "theme/components/spinners";
+
+// ... then import custom components ...
+@import "theme/components/accordion";
+@import "theme/components/rich-text";
+@import "theme/components/skip-link";
+@import "theme/components/site-menu";
+
+@import "theme/layout/footer";
+@import "theme/layout/header";
+@import "theme/layout/main";
+@import "theme/layout/section";
+
+@import "theme/utilities/color-swatch";

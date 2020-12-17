@@ -1,0 +1,208 @@
+@using System.Text.RegularExpressions
+@using System.Net
+@using System.Net.Sockets
+@* @using ToSic.Razor.Blade *@
+@using DotNetNuke.Entities.Portals
+@using DotNetNuke.Entities.Users
+
+@functions {
+
+  // ==========================================================================
+  // Sections
+  // --
+  // 1. Theme
+  // 2. Dnn
+  // 3. Polymorphism
+  // 4. Server/URL
+  // 5. Misc
+  // ==========================================================================
+
+  public static string Version() { return "20200822"; }
+
+
+
+
+  //
+  // 1. Theme
+  // ========
+  //
+  // Skin, Containers, etc.
+  // --------------------------------------------------------------------------
+
+  // Accuraty's SkinPath variable for DNN 9.2+, root of the skin folder
+  // PortalSettings.Current gets the instance
+  // https://dnndocs.com/api/DotNetNuke.Entities.Portals.PortalSettings.html
+  public static string SkinPath = PortalSettings.Current.ActiveTab.SkinPath;
+  public static string SkinCssPath = SkinPath + "dist";
+  public static string SkinJsPath = SkinPath + "dist";
+  public static string SkinMediaPath = SkinPath + "dist/media";
+  public static string SkinImagesPath = SkinMediaPath + "/images";
+  public static string SkinSvgPath = SkinMediaPath + "/svg";
+
+  public static bool isHomePage() {
+    return PortalSettings.Current.ActiveTab.TabID == PortalSettings.Current.HomeTabId;
+  }
+
+  public static HtmlString AccuIcon(string iconName) {
+    string name = ToSlug(iconName);
+    string svgSprite = SkinSvgPath + "/AccuTheme-icons.svg";
+    string output = "<svg class=\"svg svg--icon\" width=\"1em\" height=\"1em\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><use xlink:href=\"" + svgSprite + "#" + name + "\"></use></svg>";
+
+    return new HtmlString(output);
+  }
+
+  public static HtmlString BootstrapIcon(string iconName) {
+    string name = ToSlug(iconName);
+    string svgSprite = SkinSvgPath + "/bootstrap-icons.svg";
+    string output = "<svg class=\"svg svg--icon bi\" width=\"1em\" height=\"1em\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><use xlink:href=\"" + svgSprite + "#" + name + "\"></use></svg>";
+
+    return new HtmlString(output);
+  }
+
+
+
+
+  //
+  // 2. Dnn
+  // ======
+  //
+  // Conveniences, renames, utilities
+  // --------------------------------------------------------------------------
+
+  // is the current user Super (DNN Host)?
+  public static bool isSuperUser() {
+    return UserController.GetCurrentUserInfo().IsSuperUser;
+  }
+
+
+
+
+  //
+  // 3. Polymorphism
+  // ===============
+  //
+  // Use this to switch code/path logic based on IP, Role, URL params, etc.
+  // --------------------------------------------------------------------------
+
+  // sbe = Switch Between Editions; based on Role, IP, etc.
+  public static string sbe(
+    string returnTrue = "dev",
+    string returnFalse = ""
+  ) {
+    bool rule = isSuperUser() && isAccuratyIP();
+    return rule ? returnTrue : returnFalse;
+  }
+
+  // does the URL contain the expected secret?
+  // do {something} only if URL has "/demo/on" or "&demo=on" added
+  // public static bool isUrlSpecial(
+  //   string paramName = "demo",
+  //   string paramValue = "on"
+  // ) {
+  //   return urlQSParam(paramName) == paramValue;
+  // }
+
+
+
+
+  //
+  // 4. Server/URL
+  // =============
+  //
+  // Utilities that simplify common needs
+  // --------------------------------------------------------------------------
+
+  // safely fetch our URL Param
+  // public static string urlQSParam(string paramName = "demo") {
+  //   bool hasParam = Text.Has(Request.QueryString[paramName], false);
+  //   return hasParam ? Request.QueryString[paramName] : "";
+  // }
+
+  // by IP, is the remote IP address a known Accuraty WAN IP?
+  public static bool isAccuratyIP() {
+    var list = new List<string> {
+      "127.0.0.1",        // localhost
+      "192.241.63.162",   // 309SN
+      "108.220.164.129",  // 712WV (JRF)
+      "67.167.3.4",       // CML
+    };
+    return list.Contains(GetIpAddress());
+  }
+
+  // Get IP address of the visitor
+  public static string GetIpAddress() {
+    string stringIpAddress;
+    stringIpAddress = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+    if (stringIpAddress == null) {
+      stringIpAddress = Request.ServerVariables["REMOTE_ADDR"];
+    }
+    return stringIpAddress;
+  }
+
+  // Get IP from Hostname (FQDN), >> does a potentially slow DNS lookup
+  public static string GetIpFromHostname(string Hostname) {
+    string ip = "";
+    try {
+      IPHostEntry ipHostEntry = Dns.GetHostEntry(Hostname);
+      if (ipHostEntry.AddressList.Length > 0) {
+        ip = ipHostEntry.AddressList[0].ToString();
+      } else {
+        ip = "No information found.";
+      }
+    } catch (Exception) {
+      ip = "An unspecified error occured.";
+      return ip;
+    }
+    return ip;
+  }
+
+  // Turn any text or title in to a URL Slug
+  // https://stackoverflow.com/questions/2920744/url-slugify-algorithm-in-c
+  public static string ToSlug(string phrase) {
+    byte[] bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(phrase);
+    string str = System.Text.Encoding.ASCII.GetString(bytes);
+    str = str.ToLower();
+    // invalid chars
+    str = Regex.Replace(str, @"[^a-z0-9\s-]", "");
+    // convert multiple spaces into one space
+    str = Regex.Replace(str, @"\s+", " ").Trim();
+    // cut and trim
+    str = str.Substring(0, str.Length <= 45 ? str.Length : 45).Trim();
+    str = Regex.Replace(str, @"\s", "-"); // hyphens
+    return str;
+  }
+
+
+
+
+  //
+  // 5. Misc
+  // =======
+  //
+  // No section/category yet?
+  // --------------------------------------------------------------------------
+
+  // Get the width from an image file
+  public static int imageGetWidthfromFile(string pathFile) {
+    using (System.Drawing.Image sourceImage = System.Drawing.Image.FromFile(HttpContext.Current.Server.MapPath(pathFile))) {
+      return sourceImage.Width;
+    }
+  }
+
+  // Get the height from an image file
+  public static int imageGetHeightfromFile(string pathFile) {
+    using (System.Drawing.Image sourceImage = System.Drawing.Image.FromFile(HttpContext.Current.Server.MapPath(pathFile))) {
+      return sourceImage.Height;
+    }
+  }
+
+  // Strip and Format a Phone number; has defaults and allows optional
+  public static string FormatPhone(
+    string PhoneNumber = "444-555-1212",
+    string PhoneFormat = "{0:(###) ###-####}"
+  ) {
+      // remove non-digits and pad with zeros if less than 10 numbers
+      string numericPhone = new String(PhoneNumber.Where(Char.IsDigit).ToArray()).PadRight(10, '0');
+      return String.Format(PhoneFormat, long.Parse(numericPhone));
+  }
+}

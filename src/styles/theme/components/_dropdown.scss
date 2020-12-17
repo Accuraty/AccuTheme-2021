@@ -1,0 +1,160 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - Wrapper and base class
+//  - Dropdown toggle
+//  - Dropdown menu
+//  - Dropdown item
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+
+.dropdown {}
+
+
+
+
+//
+// Dropdown toggle
+// ===============
+
+.dropdown-toggle {
+
+  // Nested dropdown
+  .dropdown-menu & {
+    @include caret(right);
+
+    &::after {
+      margin-left: .325em;
+      vertical-align: 0;
+    }
+  }
+}
+
+// Used if DDR menu has `USE_CUSTOM_DROPDOWN_ICON` set to true.
+.dropdown-toggle--custom {
+
+  &::after {
+    display: none;
+  }
+
+  .svg {
+    width: .875em;
+    height: .875em;
+    margin-bottom: .175em;
+  }
+}
+
+
+
+
+//
+// Dropdown menu
+// =============
+
+.dropdown-menu {
+
+  // Nested dropdown
+  .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -.55rem;
+    margin-left: -.5rem;
+  }
+}
+
+
+
+
+//
+// Dropdown item
+// =============
+
+.dropdown-item {
+
+  @include plain-visited() {
+    color: $dropdown-link-color;
+  }
+
+  @include hover-focus() {
+    color: $dropdown-link-hover-color;
+  }
+
+  &.active,
+  &:active {
+    color: $dropdown-link-active-color;
+  }
+
+  // Nested dropdown
+  .dropdown.show > & {
+    background-color: $dropdown-link-hover-bg;
+
+    &.active,
+    &:active {
+      background-color: $dropdown-link-active-bg;
+    }
+  }
+}
+
+
+
+
+//
+// Modifier: Hoverable
+// ===================
+//
+// Works in tandem with JS component to toggle dropdowns on hover.
+//
+// Extend the hoverable area behind the dropdown menu so it
+// doesn't close as soon as your cursor leaves the the element.
+// ----------------------------------------------------------------------------
+
+.dropdown--hoverable {
+
+  &.show {
+    z-index: 1;
+
+    &:hover .dropdown-toggle:focus {
+      outline: none;
+    }
+  }
+
+  .dropdown-toggle {
+    position: relative;
+    z-index: 1;
+  }
+
+  .dropdown-menu {
+    z-index: 0;
+
+    &::after {
+      position: absolute;
+      top: -1rem;
+      right: -1rem;
+      bottom: -1rem;
+      left: -1rem;
+      z-index: -1;
+      content: "";
+    }
+
+    .dropdown-toggle {
+      z-index: 0;
+    }
+
+    // Nested dropdown
+    .dropdown-menu {
+      z-index: 1;
+
+      &::after {
+        // left: 0;
+      }
+    }
+  }
+}

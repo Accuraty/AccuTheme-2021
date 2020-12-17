@@ -1,0 +1,107 @@
+// ============================================================================
+//
+//  [Table of Contents]
+//
+//  - Footer
+//  - Footer brand
+//  - Footer nav
+//  - Footer CTA
+//  - Footer meta
+//
+// ============================================================================
+
+
+
+
+//
+// Wrapper and base class
+// ======================
+
+.footer {
+
+  a {
+
+    @include plain-visited() {
+      color: inherit;
+    }
+
+    @include hover-focus() {
+      color: $white;
+    }
+
+    &:hover {
+      text-decoration-color: rgba($white, .75);
+    }
+  }
+}
+
+
+
+
+//
+// Footer brand
+// ============
+//
+// Used for brand, project, or site name.
+// ----------------------------------------------------------------------------
+
+.footer__brand {
+
+  a {
+    width: 128px;
+
+    @include plain-visited() {
+      color: $white;
+    }
+  }
+}
+
+
+
+
+//
+// Footer nav
+// ==========
+//
+// 1. Custom `.nav` component to create a label above `.nav-link` items.
+// ----------------------------------------------------------------------------
+
+.footer__nav {
+
+  a {
+    @include hover-focus() {}
+  }
+}
+
+
+
+
+//
+// Footer CTA
+// ==========
+
+.footer__cta {}
+
+
+
+
+//
+// Footer meta
+// ===========
+//
+// Copyright, Accuraty credit, etc.
+// ----------------------------------------------------------------------------
+
+.footer__meta {
+  color: $gray-400;
+  font-size: $font-size-xs;
+
+  // a {
+  //   text-decoration-skip-ink: auto;
+  //   cursor: pointer;
+
+  //   &:hover {
+  //     text-decoration-color: rgba($white, .4);
+  //   }
+  // }
+}

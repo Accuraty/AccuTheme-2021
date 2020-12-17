@@ -1,0 +1,81 @@
+@using DotNetNuke.Web.DDRMenu;
+@using System.Dynamic;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+
+@functions {
+
+  /*
+    Dropdown attributes
+    ===
+    If needed, builds the attributes Bootstrap's dropdown plugin requires.
+    **************************************************************************/
+  private HtmlString buildDropdownAttributes(MenuNode node) {
+    var attributeString = node.HasChildren() ? ("id=\"tab-" + node.TabId + "-dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"") : "";
+
+    return new HtmlString(attributeString);
+  }
+}
+
+
+@*
+  Top-level menu
+  ===
+  Builds a Bootstrap `.dropdown` component.
+  ****************************************************************************@
+@helper RenderNodes(IList<MenuNode> nodes) {
+  if (nodes.Count > 0) {
+    foreach (var node in nodes) {
+      var dropdownAttributes = buildDropdownAttributes(node);
+
+      <div id="SiteMenu" class="dropdown">
+        <button class="btn btn-lg btn-primary dropdown-toggle" type="button" @dropdownAttributes>@node.Text</button>
+        @RenderChildren(node)
+      </div>
+    }
+  }
+}
+
+
+@*
+  Dropdown menus
+  ===
+  Builds a Bootstrap `.dropdown-menu` component.
+  ****************************************************************************@
+@helper RenderChildren(MenuNode node) {
+  var children = node.Children;
+  if (children.Count > 0) {
+    <ul class="dropdown-menu" aria-labelledby="tab-@node.TabId-dropdown-toggle">
+      @foreach (var child in children) {
+        var itemClasses = new List<string> { "tab-" + child.TabId };
+        var linkClasses = new List<string> { "dropdown-item" };
+
+        if (child.Breadcrumb) {
+          linkClasses.Add("active");
+        }
+
+        if (child.HasChildren()) {
+          itemClasses.Add("dropdown");
+          linkClasses.Add("dropdown-toggle");
+        }
+
+        var itemCss = String.Join(" ", itemClasses);
+        var linkCss = String.Join(" ", linkClasses);
+        var linkHref = child.Enabled ? child.Url : "#";
+        var dropdownAttributes = buildDropdownAttributes(child);
+
+        <li id="tab-@child.TabId" class="@itemCss">
+          <a class="@linkCss" href="@linkHref" @dropdownAttributes>@child.Text</a>
+          @RenderChildren(child)
+        </li>
+      }
+    </ul>
+  }
+}
+
+
+@*
+  Init
+  ===
+  Trigger the magic.
+  ****************************************************************************@
+@RenderNodes(Model.Source.root.Children)

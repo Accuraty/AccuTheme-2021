@@ -1,0 +1,13 @@
+// You don't need the file extension, just the name.
+// Add the files to `src/media/fonts/` and re-run the Gulp build.
+$font-file-name: "___FONT_FILE_NAME__";
+
+// @font-face {
+//   font-display: swap;
+//   font-family: "___FONT_NAME___";
+//   font-style: normal;
+//   font-weight: normal;
+//   src:
+//     url("#{$skin-font-path}/#{$font-file-name}.woff2") format("woff2"),
+//     url("#{$skin-font-path}/#{$font-file-name}.woff") format("woff");
+// }

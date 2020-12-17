@@ -1,0 +1,34 @@
+//
+// Wrapper and base class
+// ======================
+
+.header {
+
+  // Reposition fixed `.header` so DNN Persona Bar doesn't overlap it
+  .personabar-visible & {
+    &.fixed-top {
+      left: $dnn-persona-bar-width;
+    }
+  }
+}
+
+
+
+
+//
+// Modifier: Transform header on scroll
+// ====================================
+//
+// Designed to work with the `Header` JavaScript component.
+// ----------------------------------------------------------------------------
+
+.header.transform-on-scroll {
+  transition-timing-function: $transition-timing-function;
+  transition-duration: .25s;
+  transition-property: transform;
+  will-change: transform;
+
+  &.has-scrolled {
+    transform: translateY(-100%);
+  }
+}

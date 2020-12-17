@@ -1,0 +1,21 @@
+.section {}
+
+
+.section--offset-y {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 8vw;
+    padding-bottom: 8vw;
+  }
+}
+
+
+.section--navbarOffset {
+  padding-top: calc(#{$navbar-height-xs} + 1.5rem);
+
+  @include media-breakpoint-up(md) {
+    padding-top: calc(#{$navbar-height-md} + 3rem);
+  }
+}
