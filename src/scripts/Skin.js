@@ -38,19 +38,15 @@ import 'bootstrap/js/dist/tooltip';
 
 import App from './App';
 
-import Demo from './components/Demo';
 import Header from './components/Header';
 import NavMenu from './components/NavMenu';
 
 import skipToContent from './lib/skip-to-content';
-import smoothScroll from './lib/smooth-scroll';
 
 skipToContent();
-smoothScroll();
 
 // Components that should be globally available in this theme.
 const ComponentManifest = {
-  Demo,
   Header,
   NavMenu,
 };
