@@ -40,17 +40,20 @@ module.exports = {
     splitChunks: {
       cacheGroups: {
         defaultVendors: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
           chunks: 'initial',
           minChunks: 2,
           minSize: 0,
+          name: 'vendors',
+          priority: -10,
+          reuseExistingChunk: true,
+          test: /[\\/]node_modules[\\/]/,
         },
         common: {
-          test: /[\\/]scripts\/(App|config)[\\/]/i,
-          name: 'common',
           chunks: 'all',
-          minSize: 0,
+          enforce: true,
+          name: 'common',
+          priority: -20,
+          test: /[\\/]scripts\/(App|config)[\\/]/i,
         },
       },
     },

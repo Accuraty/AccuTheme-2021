@@ -7,7 +7,7 @@ import 'core-js';
 //  - Util          REQUIRED! DON'T REMOVE!
 //  - Alert*        make alerts dismissable
 //  - Button*       control button states for toolbar-like behavior
-//  - Carousel      (disable if using Flickity)
+//  - Carousel      (disable if using a different third-party library)
 //  - Collapse      toggle visibility of content, e.g., accordions
 //  - Dropdown      toggle overlays for displaying lists of links
 //  - Modal         functionality for lightboxes, popups, etc.
