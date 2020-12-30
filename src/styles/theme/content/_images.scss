@@ -1,26 +1,24 @@
 // ============================================================================
 //
-//  [Table of Contents]
+//  [Contents]
 //
-//  - Basic table
+//  - Responsive images
+//  - Image thumbnail
 //
 // ============================================================================
 
 
 
+//
+// Responsive images
+// =================
+
+.img-fluid {}
+
+
 
 //
-// Basic table
-// ===========
+// Image thumbnail
+// ===============
 
-.table {
-
-  th,
-  td {}
-
-  thead th {}
-
-  tbody + tbody {}
-
-  .table {}
-}
+.img-thumbnail {}

@@ -1,6 +1,6 @@
 // ============================================================================
 //
-//  [Table of Contents]
+//  [Contents]
 //
 //  - Wrapper and base class
 //  - Nav tabs
@@ -31,7 +31,10 @@
 // Nav tabs
 // ========
 
-.nav-tabs {}
+.nav-tabs {
+
+  .nav-link {}
+}
 
 
 
@@ -40,4 +43,7 @@
 // Nav pills
 // =========
 
-.nav-pills {}
+.nav-pills {
+
+  .nav-link {}
+}

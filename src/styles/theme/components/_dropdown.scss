@@ -1,11 +1,11 @@
 // ============================================================================
 //
-//  [Table of Contents]
+//  [Contents]
 //
 //  - Wrapper and base class
-//  - Dropdown toggle
-//  - Dropdown menu
-//  - Dropdown item
+//      - Toggle
+//      - Menu
+//          - Item
 //
 // ============================================================================
 
@@ -15,8 +15,14 @@
 //
 // Wrapper and base class
 // ======================
+//
+// Use on a `<div>`
+// ----------------------------------------------------------------------------
 
-.dropdown {}
+.dropup,
+.dropend,
+.dropdown,
+.dropstart {}
 
 
 
@@ -24,6 +30,9 @@
 //
 // Dropdown toggle
 // ===============
+//
+// Use on a `<button>` or `<a>`
+// ----------------------------------------------------------------------------
 
 .dropdown-toggle {
 
@@ -83,7 +92,8 @@
     color: $dropdown-link-color;
   }
 
-  @include hover-focus() {
+  &:hover,
+  &:focus {
     color: $dropdown-link-hover-color;
   }
 

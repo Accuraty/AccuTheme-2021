@@ -1,10 +1,11 @@
 // ============================================================================
 //
-//  [Table of Contents]
+//  [Contents]
 //
 //  - Wrapper and base class
-//  - Toast header
-//  - Toast body
+//      - Container
+//      - Header
+//      - Body
 //
 // ============================================================================
 
@@ -24,7 +25,10 @@
 // Toast header
 // ============
 
-.toast-header {}
+.toast-header {
+
+  .btn-close {}
+}
 
 
 

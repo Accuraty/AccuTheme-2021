@@ -1,0 +1,31 @@
+// ============================================================================
+//
+//  [Contents]
+//
+//  - Wrapper and base class
+//  - Target `<th>` and `<td>`
+//
+// ============================================================================
+
+
+
+//
+// Wrapper and base class
+// ======================
+
+.table {}
+
+
+
+
+//
+// Target `<th>` and `<td>`
+// ========================
+//
+// Bootstrap uses this to prevent styles leaking to nested tables that don't
+// have a `.table` class. The universal selector (`*`) simplifies the rule and
+// makes it easier to override, if you need a higher specificity.
+// ----------------------------------------------------------------------------
+
+// stylelint-disable-next-line selector-max-universal
+.table > :not(caption) > * > * {}

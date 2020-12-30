@@ -1,9 +1,10 @@
 // ============================================================================
 //
-//  [Table of Contents]
+//  [Contents]
 //
 //  - Wrapper and base class
-//  - Progress bar
+//      - Progress bar
+//  - Modifier: Progress bar striped
 //
 // ============================================================================
 
@@ -24,3 +25,12 @@
 // ============
 
 .progress-bar {}
+
+
+
+
+//
+// Modifier: Progress bar striped
+// ==============================
+
+.progress-bar-striped {}

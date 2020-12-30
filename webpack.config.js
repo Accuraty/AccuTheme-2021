@@ -1,7 +1,6 @@
 const path = require('path');
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const { ProvidePlugin } = require('webpack');
+// const { ProvidePlugin } = require('webpack');
 
 const { project, paths } = require('./gulpfile.js/config');
 const { getWebpackEntries } = require('./gulpfile.js/utils');
@@ -86,13 +85,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new FriendlyErrorsPlugin(),
-    new ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    }),
-  ],
+  plugins: [],
   watchOptions: {
     ignored: ['./node_modules/'],
   },

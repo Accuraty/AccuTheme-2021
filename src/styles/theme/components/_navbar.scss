@@ -1,12 +1,14 @@
 // ============================================================================
 //
-//  [Table of Contents]
+//  [Contents]
 //
 //  - Wrapper and base class
 //  - Navbar brand
+//  - Navbar nav
 //  - Navbar text
 //  - Responsive navbar
-//  - Admin menu
+//  - Navbar position
+//  - Navbar themes
 //
 // ============================================================================
 
@@ -98,20 +100,43 @@
 
 
 //
-// Site menu
-// =========
+// Navbar themes
+// =============
 //
-// Site management menu in the navbar. Independent of the primary nav.
+// 🚨 HEADS UP! You probably don't need to add styles here.
+//
+// Most of what you want to accomplish can likely be done in `_variables.scss`
+// or by adding utility classes to your `_header.ascx` and/or DDR menu file.
 // ----------------------------------------------------------------------------
 
-#site-menu {
+// Dark links against a light background
+.navbar-light {
 
-  .nav-link {
-    color: $white;
-    background-color: $link-color;
+  .navbar-brand {}
 
-    @include hover-focus() {
-      background-color: $link-hover-color;
-    }
+  .navbar-nav {
+    .nav-link {}
   }
+
+  .navbar-toggler {}
+
+  .navbar-toggler-icon {}
+
+  .navbar-text {}
+}
+
+// Light links against a dark background
+.navbar-dark {
+
+  .navbar-brand {}
+
+  .navbar-nav {
+    .nav-link {}
+  }
+
+  .navbar-toggler {}
+
+  .navbar-toggler-icon {}
+
+  .navbar-text {}
 }

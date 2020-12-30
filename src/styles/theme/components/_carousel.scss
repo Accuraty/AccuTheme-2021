@@ -1,10 +1,10 @@
 // ============================================================================
 //
-//  [Table of Contents]
+//  [Contents]
 //
-//  - Wrapper and base styles
+//  - Wrapper and base class
 //  - Carousel item
-//  - Left/right controls
+//  - Left/right controls for nav
 //  - Indicators
 //  - Captions
 //
@@ -14,8 +14,8 @@
 
 
 //
-// Wrapper and base styles
-// =======================
+// Wrapper and base class
+// ======================
 
 .carousel {}
 
@@ -26,14 +26,17 @@
 // Carousel item
 // =============
 
-.carousel-item {}
+.carousel-item {
+
+  &.active {}
+}
 
 
 
 
 //
-// Left/right controls
-// ===================
+// Left/right controls for nav
+// ===========================
 
 .carousel-control-prev,
 .carousel-control-next {}
@@ -46,17 +49,24 @@
 
 
 //
+// Control icons
+// =============
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {}
+
+
+
+
+//
 // Indicators
 // ==========
 
 .carousel-indicators {
 
-  li {
+  li {}
 
-    &::before {}
-
-    &::after {}
-  }
+  .active {}
 }
 
 

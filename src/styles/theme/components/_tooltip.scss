@@ -1,9 +1,9 @@
 // ============================================================================
 //
-//  [Table of Contents]
+//  [Contents]
 //
 //  - Wrapper and base class
-//  - Tooltip inner
+//      - Tooltip inner
 //
 // ============================================================================
 
@@ -14,7 +14,10 @@
 // Wrapper and base class
 // ======================
 
-.tooltip {}
+.tooltip {
+
+  .tooltip-arrow {}
+}
 
 
 

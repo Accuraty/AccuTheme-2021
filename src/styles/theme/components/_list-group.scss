@@ -1,10 +1,11 @@
 // ============================================================================
 //
-//  [Table of Contents]
+//  [Contents]
 //
 //  - Wrapper and base class
 //  - Interactive list items
-//  - Basic list items
+//  - Individual list items
+//  - Modifier: Flush list items
 //
 // ============================================================================
 
@@ -14,6 +15,9 @@
 //
 // Wrapper and base class
 // ======================
+//
+// Use with `<ul>`, `<ol>`, or `<div>`
+// ----------------------------------------------------------------------------
 
 .list-group {}
 
@@ -23,6 +27,10 @@
 //
 // Interactive list items
 // ======================
+//
+// Use `<a>` or `<button>` elements instead of `<li>` or `<div>` to create
+// interactive list items. Has an `.active` modifier class for selected items.
+// ----------------------------------------------------------------------------
 
 .list-group-item-action {
 
@@ -30,15 +38,37 @@
     color: $list-group-action-color;
   }
 
-  @include hover-focus() {
+  &:hover,
+  &:focus {
     color: $list-group-action-hover-color;
   }
+
+  &.active {}
 }
 
 
 
+
 //
-// Basic list items
-// ================
+// Individual list items
+// =====================
+//
+// Use on `<li>` or `<div>` elements within the `.list-group` parent.
+// ----------------------------------------------------------------------------
 
 .list-group-item {}
+
+
+
+
+//
+// Modifier: Flush list items
+// ==========================
+//
+// Remove borders and border-radius to keep list group items edge-to-edge.
+// ----------------------------------------------------------------------------
+
+.list-group-flush {
+
+  & > .list-group-item {}
+}

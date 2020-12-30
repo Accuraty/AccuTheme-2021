@@ -1,19 +1,20 @@
 // ============================================================================
 //
-//  [Table of Contents]
+//  [Contents]
 //
 //  - Base styles
-//  - Card typography
-//  - Card sections
-//     - Header
-//     - Body
-//     - Footer
-//  - Card navs
-//  - Card image
-//  - Card layouts
-//     - Deck
-//     - Groups
-//     - Columns
+//  - Typography
+//      - Title
+//      - Subtitle
+//      - Text
+//      - Link
+//  - Sections
+//      - Header
+//      - Body
+//      - Footer
+//  - Navs
+//  - Image
+//  - Card groups
 //
 // ============================================================================
 
@@ -78,29 +79,10 @@
 
 
 //
-// Card layouts
-// ============
+// Card group
+// ==========
 
-// Deck
-.card-deck {
-
-  .card {}
-}
-
-// Groups
 .card-group {
-
-  & > .card {}
-}
-
-// Columns
-.card-columns {
-
-  .card {}
-}
-
-// Accordion
-.accordion {
 
   & > .card {}
 }

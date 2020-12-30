@@ -1,6 +1,6 @@
 # Components
 
-We organize small components inside the `_components/` folder. While `_layout/` is macro (defining the global wireframe), `_components/` is focused on micro. This folder contains various widgets, such as buttons, sliders, images, tables, lists, etc. There are usually a lot of files in `_components/`.
+We organize small components inside the `theme/components/` folder. While `theme/layout/` is macro (defining the global wireframe), `theme/components/` is focused on micro. This folder contains various widgets, such as buttons, sliders, images, tables, lists, etc. There are usually a lot of files in `theme/components/`.
 
 ## Guidelines
 

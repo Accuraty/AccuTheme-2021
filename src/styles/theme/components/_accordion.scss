@@ -1,8 +1,70 @@
+// ============================================================================
+//
+//  [Contents]
+//
+//  - Wrapper and base class
+//  - Accordion item
+//      - Header
+//          - Button
+//      - Collpase
+//          - Body
+//
+// ============================================================================
+
+
+
+
 //
 // Wrapper and base class
 // ======================
 
-.accordion {
+.accordion {}
 
-  .btn {}
+
+
+
+//
+// Item
+// ====
+
+.accordion-item {}
+
+
+
+
+//
+// Header
+// ======
+
+.accordion-header {}
+
+
+
+
+//
+// Button
+// ======
+
+.accordion-button {
+
+  // Accordion icon
+  &::after {}
 }
+
+
+
+
+//
+// Collapse
+// ========
+
+.accordion-collapse {}
+
+
+
+
+//
+// Body
+// ====
+
+.accordion-body {}

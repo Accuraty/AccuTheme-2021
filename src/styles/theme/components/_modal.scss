@@ -1,10 +1,14 @@
 // ============================================================================
 //
-//  [Table of Contents]
+//  [Contents]
 //
-//  - Wrapper and base styles
-//  - Modal sections
+//  - Modal content
+//  - Modal background
 //  - Modal title
+//  - Modal sections
+//      - Header
+//      - Body
+//      - Footer
 //
 // ============================================================================
 
@@ -12,13 +16,31 @@
 
 
 //
-// Wrapper and base styles
-// =======================
+// Modal content
+// =============
 //
-// The other classes (`.modal` and `.modal-dialog`) are not used for styling.
+// Parent classes (`.modal` or `.modal-dialog`) should not be used for styling.
 // ----------------------------------------------------------------------------
 
 .modal-content {}
+
+
+
+
+//
+// Modal background
+// ================
+
+.modal-backdrop {}
+
+
+
+
+//
+// Modal title
+// ===========
+
+.modal-title {}
 
 
 
@@ -32,12 +54,3 @@
 .modal-body {}
 
 .modal-footer {}
-
-
-
-
-//
-// Modal title
-// ===========
-
-.modal-title {}

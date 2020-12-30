@@ -9,7 +9,7 @@ export default function skipToContent() {
     main.setAttribute('id', 'content');
   }
 
-  link.setAttribute('class', 'skip-link btn btn-light');
+  link.setAttribute('class', 'skip-link position-absolute btn btn-light');
   link.setAttribute('href', `#${main.id}`);
   link.innerText = 'Skip to content';
 

@@ -1,28 +1,33 @@
 // ============================================================================
 //
-//  [Table of Contents]
+//  [Contents]
 //
-//  - Image thumbnails
-//  - Figures
+//  - Wrapper and base class
+//      - Image
+//      - Caption
 //
 // ============================================================================
 
 
 
-
 //
-// Image thumbnails
-// ================
-
-.img-thumbnail {}
-
-
-
-
-//
-// Figures
-// =======
+// Wrapper and base class
+// ======================
 
 .figure {}
+
+
+
+//
+// Image
+// =====
+
 .figure-img {}
+
+
+
+//
+// Caption
+// =======
+
 .figure-caption {}
