@@ -23,19 +23,6 @@ const autoprefixer = {
 };
 
 /**
- * CLEAN CSS
- * https://github.com/jakubpawlowicz/clean-css#constructor-options
- */
-const cleanCss = {
-  options: {
-    level: 2,
-    format: {
-      breaksWith: 'lf',
-    },
-  },
-};
-
-/**
  * IMAGEMIN
  * https://github.com/sindresorhus/gulp-imagemin
  */
@@ -137,7 +124,6 @@ const realFavicon = {
 module.exports = {
   gulpSass,
   autoprefixer,
-  cleanCss,
   imagemin,
   realFavicon,
 };
