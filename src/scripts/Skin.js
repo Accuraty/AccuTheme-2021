@@ -1,3 +1,5 @@
+import 'core-js';
+
 //  Bootstrap v4 JavaScript plugins
 //
 //  Use only what you need to keep the bundle size as small as possible.
@@ -5,7 +7,7 @@
 //  - Util          REQUIRED! DON'T REMOVE!
 //  - Alert*        make alerts dismissable
 //  - Button*       control button states for toolbar-like behavior
-//  - Carousel      (disable if using Flickity)
+//  - Carousel      (disable if using a different third-party library)
 //  - Collapse      toggle visibility of content, e.g., accordions
 //  - Dropdown      toggle overlays for displaying lists of links
 //  - Modal         functionality for lightboxes, popups, etc.
@@ -36,19 +38,15 @@ import 'bootstrap/js/dist/tooltip';
 
 import App from './App';
 
-import Demo from './components/Demo';
 import Header from './components/Header';
 import NavMenu from './components/NavMenu';
 
 import skipToContent from './lib/skip-to-content';
-import smoothScroll from './lib/smooth-scroll';
 
 skipToContent();
-smoothScroll();
 
 // Components that should be globally available in this theme.
 const ComponentManifest = {
-  Demo,
   Header,
   NavMenu,
 };

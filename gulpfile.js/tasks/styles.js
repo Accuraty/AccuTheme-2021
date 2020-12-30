@@ -1,6 +1,6 @@
 const autoprefixer = require('autoprefixer');
-const cleanCss = require('postcss-clean');
 const cssImport = require('postcss-import');
+const cssnano = require('cssnano');
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
@@ -20,7 +20,7 @@ const postcssProcessors = [
 ];
 
 if (!devMode) {
-  postcssProcessors.push(cleanCss(plugins.cleanCss.options));
+  postcssProcessors.push(cssnano());
 }
 
 function skinStylesTask() {

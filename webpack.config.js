@@ -22,16 +22,14 @@ module.exports = {
     minimize: !devMode,
     minimizer: [
       new TerserPlugin({
-        cache: true,
         exclude: /vendors/,
         extractComments: false,
         parallel: true,
-        sourceMap: false,
         terserOptions: {
           compress: {
             drop_console: true,
           },
-          output: {
+          format: {
             comments: false,
           },
         },
@@ -41,18 +39,21 @@ module.exports = {
     runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
+        defaultVendors: {
           chunks: 'initial',
           minChunks: 2,
           minSize: 0,
+          name: 'vendors',
+          priority: -10,
+          reuseExistingChunk: true,
+          test: /[\\/]node_modules[\\/]/,
         },
         common: {
-          test: /[\\/]scripts\/(App|config)[\\/]/i,
-          name: 'common',
           chunks: 'all',
-          minSize: 0,
+          enforce: true,
+          name: 'common',
+          priority: -20,
+          test: /[\\/]scripts\/(App|config)[\\/]/i,
         },
       },
     },
@@ -62,6 +63,7 @@ module.exports = {
       {
         test: /\.m?js$/,
         exclude: /(node_modules)/,
+        include: path.resolve(__dirname, paths.src),
         use: {
           loader: 'babel-loader',
           options: {
