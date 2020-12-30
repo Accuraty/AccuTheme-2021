@@ -25,7 +25,6 @@ module.exports = {
         exclude: /vendors/,
         extractComments: false,
         parallel: true,
-        sourceMap: false,
         terserOptions: {
           compress: {
             drop_console: true,
