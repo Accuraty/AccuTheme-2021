@@ -22,7 +22,6 @@ module.exports = {
     minimize: !devMode,
     minimizer: [
       new TerserPlugin({
-        cache: true,
         exclude: /vendors/,
         extractComments: false,
         parallel: true,
@@ -31,7 +30,7 @@ module.exports = {
           compress: {
             drop_console: true,
           },
-          output: {
+          format: {
             comments: false,
           },
         },
@@ -41,7 +40,7 @@ module.exports = {
     runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
-        vendors: {
+        defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'initial',
@@ -62,6 +61,7 @@ module.exports = {
       {
         test: /\.m?js$/,
         exclude: /(node_modules)/,
+        include: path.resolve(__dirname, paths.src),
         use: {
           loader: 'babel-loader',
           options: {
