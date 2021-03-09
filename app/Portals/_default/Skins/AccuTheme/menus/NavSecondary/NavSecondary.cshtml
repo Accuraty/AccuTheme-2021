@@ -17,12 +17,15 @@
     3. If false, no markup will be generated. Used in `RenderChildren` helper.
 
     4. To use a custom SVG icon instead of the Bootstrap default.
-    **************************************************************************/
-  private bool NAV_IS_ALIGNED_RIGHT = false; // 1
-  private bool INCLUDE_DROPDOWN_MENUS = false; // 2
-  private bool INCLUDE_NESTED_DROPDOWNS = false; // 3
-  private bool USE_CUSTOM_DROPDOWN_ICON = false; // 4
 
+    5. Note that `node.Depth` is 0-based.
+    **************************************************************************/
+  private bool NAV_LAST_IS_ALIGNED_RIGHT = true; // 1 a
+  private bool NAV_ALL_ARE_ALIGNED_RIGHT = false; // 1 b
+  private bool INCLUDE_DROPDOWN_MENUS = true; // 2
+  private bool INCLUDE_NESTED_DROPDOWNS = true; // 3
+  private bool USE_CUSTOM_DROPDOWN_ICON = false; // 4
+  private int MAX_DEPTH_FOR_DROPDOWNS = 1; // 5
 
   /*
     Target attributes
@@ -52,7 +55,8 @@
     If needed, builds the attributes Bootstrap's dropdown plugin requires.
     **************************************************************************/
   private HtmlString buildDropdownAttributes(MenuNode node) {
-    var attributeString = INCLUDE_DROPDOWN_MENUS && node.HasChildren() ? ("id=\"tab-" + node.TabId + "-dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"") : "";
+    var attributeString = INCLUDE_DROPDOWN_MENUS && node.HasChildren() && (node.Depth <= MAX_DEPTH_FOR_DROPDOWNS) ? ("id=\"tab-" + node.TabId + "-dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"") : ""
+    ;
 
     return new HtmlString(attributeString);
   }
@@ -76,7 +80,7 @@
 @helper RenderNodes(IList<MenuNode> nodes) {
   if (nodes.Count > 0) {
     var navClasses = new List<string> { "navbar-nav" };
-    if (NAV_IS_ALIGNED_RIGHT) {
+    if (NAV_LAST_IS_ALIGNED_RIGHT || NAV_ALL_ARE_ALIGNED_RIGHT) {
       navClasses.Add("ml-auto");
     }
     var navCss = String.Join(" ", navClasses);
@@ -85,12 +89,13 @@
       @foreach (var node in nodes) {
         var itemClasses = new List<string> { "nav-item" };
         var linkClasses = new List<string> { "nav-link" };
+        var hasDropdown = INCLUDE_DROPDOWN_MENUS && node.HasChildren() && (node.Depth <= MAX_DEPTH_FOR_DROPDOWNS);
 
         if (node.Breadcrumb) {
           itemClasses.Add("active");
         }
 
-        if (INCLUDE_DROPDOWN_MENUS && node.HasChildren()) {
+        if (hasDropdown) {
           itemClasses.Add("dropdown");
           linkClasses.Add("dropdown-toggle d-inline-flex align-items-center");
 
@@ -108,7 +113,7 @@
         <li id="tab-@node.TabId" class="@itemCss">
           <a class="@linkCss" href="@linkHref" @targetAttributes @dropdownAttributes>
             <span>@node.Text</span>
-            @if (INCLUDE_DROPDOWN_MENUS && node.HasChildren() && USE_CUSTOM_DROPDOWN_ICON) {
+            @if (hasDropdown && USE_CUSTOM_DROPDOWN_ICON) {
               <span class="ml-2 ml-lg-1">
                 @AccuKit.BootstrapIcon("Chevron Down")
               </span>
@@ -142,7 +147,7 @@
   var children = node.Children;
   if (children.Count > 0) {
     var menuClasses = new List<string> { "dropdown-menu" };
-    if (NAV_IS_ALIGNED_RIGHT && node.Last) {
+    if ((NAV_LAST_IS_ALIGNED_RIGHT && node.Last) || NAV_ALL_ARE_ALIGNED_RIGHT) {
       menuClasses.Add("dropdown-menu-right"); // 1
     }
     var menuCss = String.Join(" ", menuClasses);
@@ -156,7 +161,7 @@
           linkClasses.Add("active");
         }
 
-        if (INCLUDE_NESTED_DROPDOWNS && child.HasChildren()) {
+        if (INCLUDE_NESTED_DROPDOWNS && child.HasChildren() && (node.Depth <= MAX_DEPTH_FOR_DROPDOWNS)) {
           itemClasses.Add("dropdown");
           linkClasses.Add("dropdown-toggle");
         }
@@ -167,7 +172,7 @@
         var targetAttributes = buildTargetAttribute(child);
         var dropdownAttributes = INCLUDE_NESTED_DROPDOWNS ? buildDropdownAttributes(child) : null;
 
-        <li class="@itemCss">
+        <li id="tab-@child.TabId" class="@itemCss">
           <a class="@linkCss" href="@linkHref" @targetAttributes @dropdownAttributes>@child.Text</a>
           @if (INCLUDE_NESTED_DROPDOWNS) {
             @RenderChildren(child)
