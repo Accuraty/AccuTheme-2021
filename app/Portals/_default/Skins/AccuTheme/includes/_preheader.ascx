@@ -74,6 +74,20 @@ JS priorities and suggested order (note that * denotes a core DNN file):
 Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 ========================================================================== --%>
 
+<%-- SCRIPT WITH ASYNC AND DEFER FROM A CDN
+<dnn:DnnJsInclude 
+  FilePath="URL_TO_FILE_HERE.js"
+  Priority="100"
+  HtmlAttributesAsString="async:async,defer:defer"
+  runat="server"
+/>
+--%>
+<%-- RESULT:
+<script src="URL_TO_FILE_HERE.js" async="async" defer="defer" type="text/javascript"></script>
+
+Reference: https://dnndocs.com/content/tutorials/client-resources/index.html#additional-attributes
+========================================================================== --%>
+
 <dnn:DnnJsInclude
   FilePath="dist/runtime.bundle.js"
   PathNameAlias="SkinPath"
