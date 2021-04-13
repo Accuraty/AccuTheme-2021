@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			".eslintrc": "json",
+			".prettierrc": "json",
+			".stylelintrc": "json"
+		},
+		"html.format.enable": true
+	}
+}
