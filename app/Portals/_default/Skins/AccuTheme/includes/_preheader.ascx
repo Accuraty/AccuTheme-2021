@@ -107,7 +107,7 @@ Reference: https://dnndocs.com/content/tutorials/client-resources/index.html#add
 <% 
 if ( AccuKit.skinFileExists(AccuKit.SkinJsPath, "common.bundle.js") ) 
 { 
-  DotNetNuke.Web.Client.ClientResourceManagement.ClientResourceManager.RegisterScript(
+  ClientResourceManager.RegisterScript(
     this.Page, 
     AccuKit.SkinJsPath + "/" + "common.bundle.js", 
     103,
