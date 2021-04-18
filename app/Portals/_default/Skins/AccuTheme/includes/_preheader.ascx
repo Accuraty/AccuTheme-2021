@@ -104,6 +104,18 @@ Reference: https://dnndocs.com/content/tutorials/client-resources/index.html#add
   runat="server"
 />
 
+<% 
+if ( AccuKit.skinFileExists(AccuKit.SkinJsPath, "common.bundle.js") ) 
+{ 
+  DotNetNuke.Web.Client.ClientResourceManagement.ClientResourceManager.RegisterScript(
+    this.Page, 
+    AccuKit.SkinJsPath + "/" + "common.bundle.js", 
+    103,
+    "DnnFormBottomProvider"
+  );
+}
+%>
+<%--
 <dnn:DnnJsInclude
   FilePath="dist/common.bundle.js"
   PathNameAlias="SkinPath"
@@ -111,6 +123,7 @@ Reference: https://dnndocs.com/content/tutorials/client-resources/index.html#add
   Priority="103"
   runat="server"
 />
+--%>
 
 <dnn:DnnJsInclude
   FilePath="dist/Skin.bundle.js"
