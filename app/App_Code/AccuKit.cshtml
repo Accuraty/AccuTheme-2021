@@ -39,6 +39,11 @@
   public static string SkinImagesPath = SkinMediaPath + "/images";
   public static string SkinSvgPath = SkinMediaPath + "/svg";
 
+  public static bool skinFileExists(string skinPath, string fileName)
+  {
+    return System.IO.File.Exists(HttpContext.Current.Server.MapPath(skinPath + "/" + fileName));
+  }
+
   public static bool isHomePage() {
     return PortalSettings.Current.ActiveTab.TabID == PortalSettings.Current.HomeTabId;
   }
