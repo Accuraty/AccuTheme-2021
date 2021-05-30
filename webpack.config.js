@@ -29,7 +29,7 @@ module.exports = {
           compress: {
             drop_console: true,
           },
-          format: {
+          output: {
             comments: false,
           },
         },
@@ -72,7 +72,7 @@ module.exports = {
                 '@babel/preset-env',
                 {
                   bugfixes: true,
-                  corejs: 3,
+                  corejs: '3.13',
                   useBuiltIns: 'entry',
                 },
               ],
