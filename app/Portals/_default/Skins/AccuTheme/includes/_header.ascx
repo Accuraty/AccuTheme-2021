@@ -1,5 +1,5 @@
-<%-- <%=AccuKit.BootstrapIcon("Star fill") %> --%>
-<%-- <%=AccuKit.AccuIcon("Facebook") %> --%>
+<%-- <%=AccuTheme.BootstrapIcon("Star fill") %> --%>
+<%-- <%=AccuTheme.AccuIcon("Facebook") %> --%>
 
 <header
   class="header bg-light fixed-top"
