@@ -1,4 +1,4 @@
-<% if (AccuKit.isAccuratyIP()) { %>
+<% if (AccuTheme.isAccuratyIP()) { %>
   <div class="alert alert-warning m-0 text-monospace d-none d-md-block">
     <%-- DNN / HOST --%>
     <p>DNN <%=DotNetNuke.Application.DotNetNukeContext.Current.Application.Version.ToString(3) %> / <%=System.Environment.Version.ToString() %> / Host=<%=System.Net.Dns.GetHostName() %></p>
@@ -15,7 +15,7 @@
     </div>
     <hr />
     <div class="small">
-      <p class="mb-1">WAN IP=<%=AccuKit.GetIpAddress() %> / <%=DateTime.Now.ToString("F") %></p>
+      <p class="mb-1">WAN IP=<%=AccuTheme.GetIpAddress() %> / <%=DateTime.Now.ToString("F") %></p>
       <p>Debug info only visible from ASL WAN IP addresses and being output from <code>includes/_footer.ascx</code> in Skin.</p>
     </div>
   </div>
