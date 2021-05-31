@@ -41,6 +41,9 @@ Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 --%>
 
 <%-- STYLESHEET FROM A CDN
+
+--%>
+<%--
 <dnn:DnnCssInclude
   FilePath="URL_TO_YOUR_FILE_HERE"
   Priority="1"
@@ -75,7 +78,7 @@ Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 ========================================================================== --%>
 
 <%-- SCRIPT WITH ASYNC AND DEFER FROM A CDN
-<dnn:DnnJsInclude 
+<dnn:DnnJsInclude
   FilePath="URL_TO_FILE_HERE.js"
   Priority="100"
   HtmlAttributesAsString="async:async,defer:defer"
