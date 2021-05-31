@@ -79,7 +79,7 @@
               <dd class="mb-0">
                 <a class="d-inline-flex align-items-center py-1" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">
                   <span class="d-flex mr-2">
-                    <%=AccuKit.AccuIcon("Facebook") %>
+                    <%=AccuTheme.AccuIcon("Facebook") %>
                   </span>
                   <span>Facebook</span>
                 </a>
@@ -87,7 +87,7 @@
               <dd class="mb-0">
                 <a class="d-inline-flex align-items-center py-1" target="_blank" rel="nofollow noopener noreferrer" itemprop="sameAs" href="#">
                   <span class="d-flex mr-2">
-                    <%=AccuKit.AccuIcon("LinkedIn") %>
+                    <%=AccuTheme.AccuIcon("LinkedIn") %>
                   </span>
                   <span>LinkedIn</span>
                 </a>

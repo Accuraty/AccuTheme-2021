@@ -108,11 +108,11 @@ Reference: https://dnndocs.com/content/tutorials/client-resources/index.html#add
 />
 
 <% 
-if ( AccuKit.skinFileExists(AccuKit.SkinJsPath, "common.bundle.js") ) 
+if ( AccuTheme.skinFileExists(AccuTheme.SkinJsPath, "common.bundle.js") ) 
 { 
   ClientResourceManager.RegisterScript(
     this.Page, 
-    AccuKit.SkinJsPath + "/" + "common.bundle.js", 
+    AccuTheme.SkinJsPath + "/" + "common.bundle.js", 
     103,
     "DnnFormBottomProvider"
   );
