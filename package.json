@@ -20,7 +20,7 @@
   "author": "Accuraty Solutions",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.5.0",
     "core-js": "^3.13.1",
     "flickity": "^2.2.2",
