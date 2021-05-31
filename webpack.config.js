@@ -1,5 +1,5 @@
 const path = require('path');
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { ProvidePlugin } = require('webpack');
 
@@ -7,6 +7,17 @@ const { project, paths } = require('./gulpfile.js/config');
 const { getWebpackEntries } = require('./gulpfile.js/utils');
 
 const devMode = project.mode !== 'production';
+
+const webpackPlugins = [
+  new ESLintPlugin({
+    context: `${paths.src}/scripts`,
+    failOnError: false,
+  }),
+  new ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+  }),
+];
 
 module.exports = {
   mode: project.mode,
@@ -62,7 +73,7 @@ module.exports = {
     rules: [
       {
         test: /\.m?js$/,
-        exclude: /(node_modules)/,
+        exclude: /node_modules/,
         include: path.resolve(__dirname, paths.src),
         use: {
           loader: 'babel-loader',
@@ -73,6 +84,7 @@ module.exports = {
                 {
                   bugfixes: true,
                   corejs: '3.13',
+                  debug: false,
                   useBuiltIns: 'entry',
                 },
               ],
@@ -86,13 +98,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new FriendlyErrorsPlugin(),
-    new ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    }),
-  ],
+  plugins: webpackPlugins,
   watchOptions: {
     ignored: ['./node_modules/'],
   },

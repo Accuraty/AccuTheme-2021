@@ -1,4 +1,3 @@
-const eslint = require('gulp-eslint');
 const gulp = require('gulp');
 const stylelint = require('gulp-stylelint');
 const stylelintFormatter = require('stylelint-formatter-pretty');
@@ -20,15 +19,4 @@ function lintStyles() {
     .pipe(gulp.dest(`${paths.src}/${paths.styles.dir}`));
 }
 
-function lintScripts() {
-  if (!project.scripts) return Promise.resolve();
-
-  return gulp
-    .src(paths.scripts.src)
-    .pipe(eslint())
-    .pipe(eslint.format('pretty'))
-    .pipe(eslint.failAfterError());
-}
-
 exports.lintStyles = lintStyles;
-exports.lintScripts = lintScripts;

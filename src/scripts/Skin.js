@@ -1,5 +1,3 @@
-import 'core-js';
-
 //  Bootstrap v4 JavaScript plugins
 //
 //  Use only what you need to keep the bundle size as small as possible.
