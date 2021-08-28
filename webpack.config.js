@@ -6,6 +6,9 @@ const { ProvidePlugin } = require('webpack');
 const { project, paths } = require('./gulpfile.js/config');
 const { getWebpackEntries } = require('./gulpfile.js/utils');
 
+const FileManagerPlugin = require('filemanager-webpack-plugin');
+const { TRUE } = require('node-sass');
+
 const devMode = project.mode !== 'production';
 
 const webpackPlugins = [
@@ -16,6 +19,60 @@ const webpackPlugins = [
   new ProvidePlugin({
     $: 'jquery',
     jQuery: 'jquery',
+  }),
+  new FileManagerPlugin({
+    runTasksInSeries: true,
+    events: {
+      onEnd: [
+        {
+          delete: [`${paths.package.temp}`], // TODO move this to after
+        },
+        {
+          mkdir: [`${paths.package.temp}`],
+        },
+        // Containers
+        {
+          archive: [
+            {
+              source: `${paths.container}`,
+              destination: `${paths.package.temp}/containers.zip`,
+            },
+          ],
+        },
+        {
+          archive: [
+            {
+              source: `${paths.skin}`,
+              destination: `${paths.package.temp}/skins.zip`,
+            },
+          ],
+        },
+        {
+          copy: [
+            {
+              source: `${paths.package.path}/*.{dnn}`,
+              destination: `${paths.package.temp}`,
+            },
+          ],
+        },
+        {
+          copy: [
+            {
+              source: `${paths.package.static}/*.{png,txt}`,
+              destination: `${paths.package.temp}`,
+            },
+          ],
+        },
+        {
+          archive: [
+            {
+              source: `${paths.package.temp}`,
+              destination: `${paths.package.path}/${paths.package.name}-000000-Install.zip`, // TODO version?
+            },
+          ],
+        },
+      ], // end of onEnd
+    },
   }),
 ];
 

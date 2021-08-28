@@ -24,6 +24,9 @@ const svgDir = `media/svg`;
 const imagesDir = `media/images`;
 const videosDir = `media/videos`;
 
+// Package; packaging to create a Zipped install for Dnn
+const packagePath = `./package`;
+
 module.exports = {
   app: appPath,
   portal: portalPath,
@@ -31,6 +34,17 @@ module.exports = {
   container: containerPath,
   src: srcPath,
   dist: distPath,
+
+  package: {
+    path: packagePath,
+    name: name,
+    temp: `${packagePath}/.tmp`,
+    static: `${packagePath}/static`,
+    manifest: {
+      src: `${packagePath}/static/manifest.dnn`,
+      dest: `${packagePath}/${name}.dnn`,
+    },
+  },
 
   fonts: {
     src: `${srcPath}/${fontsDir}/*.{woff,woff2}`,

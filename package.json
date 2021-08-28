@@ -10,7 +10,8 @@
     "start": "gulp",
     "lint:scripts": "eslint --format=pretty --fix",
     "lint:styles": "stylelint --syntax scss",
-    "postinstall": "gulp build"
+    "postinstall": "gulp build",
+    "package": "webpack --config webpack.installer.config.js"
   },
   "private": true,
   "repository": {
@@ -46,6 +47,7 @@
     "eslint-formatter-pretty": "^4.0.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-webpack-plugin": "^2.5.4",
+    "filemanager-webpack-plugin": "^6.1.6",
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
     "gulp-postcss": "^9.0.0",
@@ -65,7 +67,8 @@
     "stylelint-config-twbs-bootstrap": "^2.2.0",
     "stylelint-formatter-pretty": "^2.1.1",
     "terser-webpack-plugin": "^5.1.2",
-    "webpack": "^5.38.1"
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
   },
   "husky": {
     "hooks": {
