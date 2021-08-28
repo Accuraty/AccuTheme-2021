@@ -15,11 +15,13 @@
       <dependencies>
         <dependency type="coreVersion">09.08.01</dependency>
       </dependencies>
+
       <components>
         <component type="Skin">
           <skinFiles>
             <basePath>Portals\_default\Skins\AccuTheme\</basePath>
             <skinName>AccuTheme</skinName>
+
             <skinFile>
               <path />
               <name>AccuTheme.png</name>
@@ -32,6 +34,7 @@
               <path />
               <name>AccuTheme-License.txt</name>
             </skinFile>
+
           </skinFiles>
         </component>
 
@@ -40,7 +43,7 @@
           <resourceFiles>
             <basePath>Portals\_default\Skins\AccuTheme\</basePath>
             <resourceFile>
-              <name>skins.zip</name>
+              <name>main.zip</name>
             </resourceFile>
           </resourceFiles>
         </component>
@@ -50,7 +53,17 @@
           <resourceFiles>
             <basePath>Portals\_default\Containers\AccuTheme\</basePath>
             <resourceFile>
-              <name>containers.zip</name>
+              <name>cont.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+
+        <!-- AccuTheme.cshtml -->
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>App_Code\</basePath>
+            <resourceFile>
+              <name>appc.zip</name>
             </resourceFile>
           </resourceFiles>
         </component>

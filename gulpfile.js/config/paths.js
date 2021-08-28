@@ -40,6 +40,7 @@ module.exports = {
     name: name,
     temp: `${packagePath}/.tmp`,
     static: `${packagePath}/static`,
+    code: `${appPath}/App_Code`,
     manifest: {
       src: `${packagePath}/static/manifest.dnn`,
       dest: `${packagePath}/${name}.dnn`,
