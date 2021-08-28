@@ -1,0 +1,61 @@
+<dotnetnuke type="Package" version="9.0">
+  <packages>
+    <package name="Accuraty.AccuTheme" type="Skin" version="1.0.0">
+      <friendlyName>AccuTheme</friendlyName>
+      <description>A Dnn Theme Framework for customization and development</description>
+      <iconFile>AccuThemeIcon.png</iconFile>
+      <owner>
+        <name>Chris Lusk &amp; Jeremy Farrance</name>
+        <organization>Accuraty Solutions</organization>
+        <url>accuraty.com</url>
+        <email>support@accuraty.com</email>
+      </owner>
+      <license src="AccuTheme-License.txt" />
+      <releaseNotes src="AccuTheme-ReleaseNotes.txt" />
+      <dependencies>
+        <dependency type="coreVersion">09.08.01</dependency>
+      </dependencies>
+      <components>
+        <component type="Skin">
+          <skinFiles>
+            <basePath>Portals\_default\Skins\AccuTheme\</basePath>
+            <skinName>AccuTheme</skinName>
+            <skinFile>
+              <path />
+              <name>AccuTheme.png</name>
+            </skinFile>
+            <skinFile>
+              <path />
+              <name>AccuTheme-thumb.png</name>
+            </skinFile>
+            <skinFile>
+              <path />
+              <name>AccuTheme-License.txt</name>
+            </skinFile>
+          </skinFiles>
+        </component>
+
+        <!-- Menus, Includes, Controls, and Root -->
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>Portals\_default\Skins\AccuTheme\</basePath>
+            <resourceFile>
+              <name>skins.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+
+        <!-- Containers -->
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>Portals\_default\Containers\AccuTheme\</basePath>
+            <resourceFile>
+              <name>containers.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>
