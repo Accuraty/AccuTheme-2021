@@ -35,22 +35,32 @@ const webpackPlugins = [
           archive: [
             {
               source: `${paths.container}`,
-              destination: `${paths.package.temp}/containers.zip`,
+              destination: `${paths.package.temp}/cont.zip`,
             },
           ],
         },
+        // Skins
         {
           archive: [
             {
               source: `${paths.skin}`,
-              destination: `${paths.package.temp}/skins.zip`,
+              destination: `${paths.package.temp}/main.zip`,
+            },
+          ],
+        },
+        // Code (AccuTheme.cshtml)
+        {
+          archive: [
+            {
+              source: `${paths.package.code}`,
+              destination: `${paths.package.temp}/appc.zip`,
             },
           ],
         },
         {
           copy: [
             {
-              source: `${paths.package.path}/*.{dnn}`,
+              source: `${paths.package.path}/*.dnn`,
               destination: `${paths.package.temp}`,
             },
           ],
