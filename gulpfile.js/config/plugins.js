@@ -33,7 +33,7 @@ const imagemin = {
   plugins: [
     pngquant({
       speed: 6,
-      quality: [0.7, 1], // lossy settings
+      quality: '70-100', // lossy settings
     }),
     imageminPlugin.gifsicle({ interlaced: true }),
     imageminPlugin.svgo({
