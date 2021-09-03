@@ -11,7 +11,8 @@
     "lint:scripts": "eslint --format=pretty --fix",
     "lint:styles": "stylelint --syntax scss",
     "postinstall": "gulp build",
-    "package": "webpack --config webpack.installer.config.js"
+    "package": "webpack --config webpack.installer.config.js",
+    "setup": "node gather"
   },
   "private": true,
   "repository": {
@@ -23,9 +24,11 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.5.0",
+    "chalk-pipe": "^5.1.1",
     "core-js": "^3.16.4",
     "file-loader": "^6.2.0",
     "flickity": "^2.2.2",
+    "inquirer": "^8.1.2",
     "jquery": "^3.6.0",
     "pngquant-bin": "^3.1.1",
     "popper.js": "^1.16.1",
