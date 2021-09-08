@@ -1,7 +1,9 @@
-const path = require('path');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
+import path, { resolve } from 'path';
+import FileManagerPlugin from 'filemanager-webpack-plugin';
 
-// const { paths } = require('./gulpfile.js/config');
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const name = 'AccuTheme';
 const SRC_NAME = 'src';
@@ -96,7 +98,7 @@ const webpackPlugins = [
           archive: [
             {
               source: `${paths.package.temp}`,
-              destination: `${paths.package.path}/${paths.package.name}-000000-Install.zip`,
+              destination: `${paths.package.path}/${paths.package.name}-000001-Install.zip`,
             },
           ],
         },
@@ -105,11 +107,35 @@ const webpackPlugins = [
   }),
 ];
 
-module.exports = {
+export const mode = 'production';
+export const entry = resolve(__dirname, 'package/static/manifest.dnn');
+export const output = {
+  path: resolve(__dirname, `${paths.package.path}`),
+};
+export const module = {
+  rules: [
+    {
+      test: /\.dnn/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            outputPath: './',
+            name: 'manifest.dnn',
+          },
+        },
+        resolve(__dirname, 'package/static/DNN-manifest-loader.js'),
+      ],
+    },
+  ],
+};
+export const plugins = webpackPlugins;
+
+export default {
   mode: 'production',
-  entry: path.resolve(__dirname, 'package/static/manifest.dnn'),
+  entry: resolve(__dirname, 'package/static/manifest.dnn'),
   output: {
-    path: path.resolve(__dirname, `${paths.package.path}`),
+    path: resolve(__dirname, `${paths.package.path}`),
   },
   module: {
     rules: [
@@ -123,7 +149,7 @@ module.exports = {
               name: 'manifest.dnn',
             },
           },
-          path.resolve(__dirname, 'package/static/DNN-manifest-loader.js'),
+          resolve(__dirname, 'package/static/DNN-manifest-loader.cjs'),
         ],
       },
     ],

@@ -1,4 +1,4 @@
-import buildFlickity from '../lib/build-flickity';
+import buildFlickity from '../lib/build-flickity.js';
 
 export default class Carousel {
   static defaults = {};

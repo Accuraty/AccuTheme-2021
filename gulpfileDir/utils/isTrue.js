@@ -4,4 +4,4 @@ function isTrue(data) {
   return data.trim() === 'true' || data.startsWith('true');
 }
 
-module.exports = isTrue;
+export default isTrue;

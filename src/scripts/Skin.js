@@ -17,29 +17,29 @@
 //
 //  * Not typically used in AccuTheme projects. Your project may vary.
 
-import 'bootstrap/js/dist/util';
+import 'bootstrap/js/dist/util.js';
 // import 'bootstrap/js/dist/alert';
 // import 'bootstrap/js/dist/button';
-import 'bootstrap/js/dist/carousel';
-import 'bootstrap/js/dist/collapse';
-import 'bootstrap/js/dist/dropdown';
-import 'bootstrap/js/dist/modal';
+import 'bootstrap/js/dist/carousel.js';
+import 'bootstrap/js/dist/collapse.js';
+import 'bootstrap/js/dist/dropdown.js';
+import 'bootstrap/js/dist/modal.js';
 // import 'bootstrap/js/dist/popover';
 // import 'bootstrap/js/dist/scrollspy';
-import 'bootstrap/js/dist/tab';
+import 'bootstrap/js/dist/tab.js';
 // import 'bootstrap/js/dist/toast';
-import 'bootstrap/js/dist/tooltip';
+import 'bootstrap/js/dist/tooltip.js';
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
 
-import App from './App';
+import App from './App/index.js';
 
-import Header from './components/Header';
-import NavMenu from './components/NavMenu';
+import Header from './components/Header.js';
+import NavMenu from './components/NavMenu.js';
 
-import skipToContent from './lib/skip-to-content';
+import skipToContent from './lib/skip-to-content.js';
 
 skipToContent();
 

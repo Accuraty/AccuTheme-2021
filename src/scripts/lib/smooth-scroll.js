@@ -1,5 +1,5 @@
-import isReducedMotion from './is-reduced-motion';
-import getElementStyle from './get-element-style';
+import isReducedMotion from './is-reduced-motion.js';
+import getElementStyle from './get-element-style.js';
 
 export default function enableSmoothScroll(providedOffset = 50) {
   const links = document.querySelectorAll(

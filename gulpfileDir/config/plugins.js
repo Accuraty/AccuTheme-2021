@@ -1,5 +1,5 @@
-const { mode } = require('./project');
-
+import { mode } from './project.js';
+import { extendDefaultPlugins } from 'svgo';
 /**
  * GULP SASS
  * https://github.com/sass/node-sass#options
@@ -26,29 +26,29 @@ const autoprefixer = {
  * IMAGEMIN
  * https://github.com/sindresorhus/gulp-imagemin
  */
-const imageminPlugin = require('gulp-imagemin');
-const pngquant = require('imagemin-pngquant');
+import { gifsicle, svgo, mozjpeg } from 'gulp-imagemin';
+import pngquant from 'imagemin-pngquant';
 
 const imagemin = {
   plugins: [
     pngquant({
       speed: 6,
-      quality: '70-100', // lossy settings
+      quality: [0.7, 1], // lossy settings
     }),
-    imageminPlugin.gifsicle({ interlaced: true }),
-    imageminPlugin.svgo({
-      plugins: [
-        { cleanupAttrs: true },
-        { cleanupIDs: false },
-        { removeComments: true },
-        { removeDesc: false },
-        { removeStyleElement: true },
-        { removeTitle: false },
-        { removeUnknownsAndDefaults: false }, // keeps `role="image"`
-        { removeViewBox: false },
-      ],
+    gifsicle({ interlaced: true }),
+    svgo({
+      plugins: extendDefaultPlugins([
+        { name: 'cleanupAttrs', active: true },
+        { name: 'cleanupIDs', active: false },
+        { name: 'removeComments', active: true },
+        { name: 'removeDesc', active: false },
+        { name: 'removeStyleElement', active: true },
+        { name: 'removeTitle', active: false },
+        { name: 'removeUnknownsAndDefaults', active: false }, // keeps `role="image"`
+        { name: 'removeViewBox', active: false },
+      ]),
     }),
-    imageminPlugin.mozjpeg({
+    mozjpeg({
       progressive: true,
       quality: 75,
     }),
@@ -121,9 +121,4 @@ const realFavicon = {
 /**
  * EXPORTS
  */
-module.exports = {
-  gulpSass,
-  autoprefixer,
-  imagemin,
-  realFavicon,
-};
+export { gulpSass, autoprefixer, imagemin, realFavicon };

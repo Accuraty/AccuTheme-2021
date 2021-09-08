@@ -1,7 +1,7 @@
-const webpack = require('webpack');
+import webpack from 'webpack';
 
-const { project } = require('../config');
-const WEBPACK_CONFIG = require('../../webpack.config');
+import { project } from '../config/index.js';
+import * as WEBPACK_CONFIG from '../../webpack.config.js';
 
 const statsOptions = {
   builtAt: false,
@@ -26,4 +26,4 @@ function bundleScripts() {
   );
 }
 
-exports.scripts = bundleScripts;
+export const scripts = bundleScripts;

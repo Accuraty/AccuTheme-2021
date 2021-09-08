@@ -1,9 +1,10 @@
-const fs = require('fs');
-const gulp = require('gulp');
-const realFavicon = require('gulp-real-favicon');
-const replace = require('gulp-replace');
+import { readFileSync } from 'fs';
+import pkg from 'gulp';
+const { src, dest: _dest, series } = pkg;
+import { generateFavicon } from 'gulp-real-favicon';
+import replace from 'gulp-replace';
 
-const { paths, plugins, project } = require('../config');
+import { paths, plugins, project } from '../config/index.js';
 const $ = plugins.realFavicon;
 
 // File where the favicon HTML markup is stored
@@ -30,7 +31,7 @@ const CUSTOM_SETTINGS_OPTIONS = {};
 // Generate the icons. This task takes a few seconds to complete because
 // it makes a request to RealFaviconGenerator.net to build all the assets.
 function generateFavicons(done) {
-  realFavicon.generateFavicon(
+  generateFavicon(
     {
       masterPicture: paths.favicons.src,
       dest: paths.favicons.dist,
@@ -55,7 +56,7 @@ function injectFaviconsMarkup() {
   if (!project.faviconFile) return Promise.resolve();
 
   // We have to parse the JSON so we can grab only the `html_code` value.
-  const htmlCode = JSON.parse(fs.readFileSync(FAVICON_DATA)).favicon.html_code;
+  const htmlCode = JSON.parse(readFileSync(FAVICON_DATA)).favicon.html_code;
 
   // Then convert the now-parsed HTML back to a string for our C# function.
   const htmlCodeInStringFormat = JSON.stringify(htmlCode);
@@ -65,10 +66,9 @@ function injectFaviconsMarkup() {
   const pattern = /string Favicons = "\\?.*/g;
   const updated = `string Favicons = ${htmlCodeInStringFormat};`;
 
-  return gulp
-    .src(paths.favicons.markupOutput)
+  return src(paths.favicons.markupOutput)
     .pipe(replace(pattern, updated))
-    .pipe(gulp.dest(paths.favicons.markupOutputDirectory));
+    .pipe(_dest(paths.favicons.markupOutputDirectory));
 }
 
-exports.favicons = gulp.series(generateFavicons, injectFaviconsMarkup);
+export const favicons = series(generateFavicons, injectFaviconsMarkup);

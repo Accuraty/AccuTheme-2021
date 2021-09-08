@@ -1,4 +1,4 @@
-import { buildLuminous, buildLuminousGallery } from '../lib/build-luminous';
+import { buildLuminous, buildLuminousGallery } from '../lib/build-luminous.js';
 
 export default class Lightbox {
   static defaults = {
