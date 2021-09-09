@@ -1,8 +1,11 @@
 import autoprefixer from 'autoprefixer';
 import cssImport from 'postcss-import';
 import cssnano from 'cssnano';
+
+// How to get around the no named exports from gulp error
 import pkg from 'gulp';
 const { src, dest, parallel } = pkg;
+
 import postcss from 'gulp-postcss';
 import gulpSass from 'gulp-sass';
 import pkg2 from 'gulp-sourcemaps';

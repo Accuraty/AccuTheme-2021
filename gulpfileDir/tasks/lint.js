@@ -1,5 +1,7 @@
+// How to get around the no named exports from gulp error
 import pkg from 'gulp';
 const { src, dest } = pkg;
+
 import stylelint from 'gulp-stylelint';
 import stylelintFormatter from 'stylelint-formatter-pretty';
 

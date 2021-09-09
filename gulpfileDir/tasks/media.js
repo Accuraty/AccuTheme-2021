@@ -1,5 +1,7 @@
+// How to get around the no named exports from gulp error
 import pkg from 'gulp';
 const { src, dest, parallel } = pkg;
+
 import imagemin from 'gulp-imagemin';
 
 import { paths, plugins, project } from '../config/index.js';

@@ -1,3 +1,4 @@
+// How to get around the no named exports from gulp error
 import pkg from 'gulp';
 const { src, dest, parallel } = pkg;
 

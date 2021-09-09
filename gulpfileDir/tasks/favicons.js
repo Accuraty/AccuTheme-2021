@@ -1,6 +1,9 @@
 import { readFileSync } from 'fs';
+
+// This gets around the no named exports error
 import pkg from 'gulp';
 const { src, dest: _dest, series } = pkg;
+
 import { generateFavicon } from 'gulp-real-favicon';
 import replace from 'gulp-replace';
 

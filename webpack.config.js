@@ -7,7 +7,7 @@ const { ProvidePlugin } = webpackPkg;
 import { project, paths } from './gulpfileDir/config/index.js';
 import { getWebpackEntries } from './gulpfileDir/utils/index.js';
 
-// import FileManagerPlugin from 'filemanager-webpack-plugin';
+// ES6 doesn't have __filename or __dirname global variables so this creates them for us.
 import path from 'path';
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
@@ -24,72 +24,10 @@ const webpackPlugins = [
     $: 'jquery',
     jQuery: 'jquery',
   }),
-  // new FileManagerPlugin({
-  //   runTasksInSeries: true,
-  //   events: {
-  //     onEnd: [
-  //       {
-  //         delete: [`${paths.pkg.temp}`], // TODO move this to after
-  //       },
-  //       {
-  //         mkdir: [`${paths.pkg.temp}`],
-  //       },
-  //       // Containers
-  //       {
-  //         archive: [
-  //           {
-  //             source: `${paths.container}`,
-  //             destination: `${paths.pkg.temp}/cont.zip`,
-  //           },
-  //         ],
-  //       },
-  //       // Skins
-  //       {
-  //         archive: [
-  //           {
-  //             source: `${paths.skin}`,
-  //             destination: `${paths.pkg.temp}/main.zip`,
-  //           },
-  //         ],
-  //       },
-  //       // Code (AccuTheme.cshtml)
-  //       {
-  //         archive: [
-  //           {
-  //             source: `${paths.pkg.code}`,
-  //             destination: `${paths.pkg.temp}/appc.zip`,
-  //           },
-  //         ],
-  //       },
-  //       {
-  //         copy: [
-  //           {
-  //             source: `${paths.pkg.path}/*.dnn`,
-  //             destination: `${paths.pkg.temp}`,
-  //           },
-  //         ],
-  //       },
-  //       {
-  //         copy: [
-  //           {
-  //             source: `${paths.pkg.static}/*.{png,txt}`,
-  //             destination: `${paths.pkg.temp}`,
-  //           },
-  //         ],
-  //       },
-  //       {
-  //         archive: [
-  //           {
-  //             source: `${paths.pkg.temp}`,
-  //             destination: `${paths.pkg.path}/${paths.pkg.name}-000000-Install.zip`, // TODO version?
-  //           },
-  //         ],
-  //       },
-  //     ], // end of onEnd
-  //   },
-  // }),
 ];
 
+// The auto-convert broke up the modules.export object into individual exports.
+// import * as WEBPACK_CONFIG from './Path/to/This/File' will import everything as a single object named WEBPACK_CONFIG
 export const mode = project.mode;
 export const entry = getWebpackEntries();
 export const output = {
