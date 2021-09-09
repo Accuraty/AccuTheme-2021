@@ -1,5 +1,8 @@
-import dotenv from 'dotenv';
-dotenv.config();
+// This needs to be the very first import so that it is the first to run,
+// otherwise the env global variable might not contain the contents of the .env file.
+import './gulpfileDir/config/envLoader.js';
+
+// How to get around the no named exports from gulp error
 import pkg from 'gulp';
 const { parallel, series } = pkg;
 
@@ -15,6 +18,7 @@ import { watch } from './gulpfileDir/tasks/watch.js';
 const base = series(clean, copy, media);
 const compile = parallel(styles, scripts);
 
+// Seems unnecessary to export the packages this way but that is how the auto-convert did it
 const _clean = clean;
 export { _clean as clean };
 const _favicons = favicons;
