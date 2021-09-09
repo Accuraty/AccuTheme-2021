@@ -1,5 +1,5 @@
 import { mode } from './project.js';
-import { extendDefaultPlugins } from 'svgo';
+
 /**
  * GULP SASS
  * https://github.com/sass/node-sass#options
@@ -37,16 +37,21 @@ const imagemin = {
     }),
     gifsicle({ interlaced: true }),
     svgo({
-      plugins: extendDefaultPlugins([
-        { name: 'cleanupAttrs', active: true },
-        { name: 'cleanupIDs', active: false },
-        { name: 'removeComments', active: true },
-        { name: 'removeDesc', active: false },
-        { name: 'removeStyleElement', active: true },
-        { name: 'removeTitle', active: false },
-        { name: 'removeUnknownsAndDefaults', active: false }, // keeps `role="image"`
-        { name: 'removeViewBox', active: false },
-      ]),
+      plugins: [
+        {
+          name: 'preset-default',
+          params: {
+            cleanupAttrs: true,
+            cleanupIDs: false,
+            removeComments: true,
+            removeDesc: false,
+            removeStyleElement: true,
+            removeTitle: false,
+            removeUnknownsAndDefaults: false, // keeps `role="image"`
+            removeViewBox: false,
+          },
+        },
+      ],
     }),
     mozjpeg({
       progressive: true,
