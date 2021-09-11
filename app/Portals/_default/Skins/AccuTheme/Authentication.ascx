@@ -1,3 +1,4 @@
+<div id="skinAuth" class="dnn-skin-wrapper skin-auth">
 <!--#include file="includes/_preheader.ascx"-->
 <!--#include file="includes/_header.ascx"-->
 
@@ -40,3 +41,4 @@
 </main>
 
 <!--#include file="includes/_footer.ascx"-->
+</div>
