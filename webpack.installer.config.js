@@ -1,42 +1,11 @@
-const path = require('path');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
+import path, { resolve } from 'path';
+import FileManagerPlugin from 'filemanager-webpack-plugin';
+import * as paths from './gulpfileDir/config/paths.js';
 
-// const { paths } = require('./gulpfile.js/config');
-
-const name = 'AccuTheme';
-const SRC_NAME = 'src';
-const DIST_NAME = 'dist';
-
-const appPath = `./app`;
-const portalPath = `${appPath}/Portals/_default`;
-const skinPath = `${portalPath}/Skins/${name}`;
-const containerPath = `${portalPath}/Containers/${name}`;
-
-const srcPath = `./${SRC_NAME}`;
-const distPath = `${skinPath}/${DIST_NAME}`;
-
-// Package; packaging to create a Zipped install for Dnn
-const packagePath = `./package`;
-
-const paths = {
-  app: appPath,
-  portal: portalPath,
-  skin: skinPath,
-  container: containerPath,
-  src: srcPath,
-  dist: distPath,
-  package: {
-    path: packagePath,
-    name: name,
-    temp: `${packagePath}/.tmp`,
-    static: `${packagePath}/static`,
-    code: `${appPath}/App_Code`,
-    manifest: {
-      src: `${packagePath}/static/manifest.dnn`,
-      dest: `${packagePath}/${name}.dnn`,
-    },
-  },
-};
+// ES6 doesn't have __filename or __dirname global variables so this creates them for us.
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const webpackPlugins = [
   new FileManagerPlugin({
@@ -44,19 +13,19 @@ const webpackPlugins = [
     events: {
       onEnd: [
         {
-          delete: [`${paths.package.temp}`],
+          delete: [`${paths.pkg.temp}`],
         },
         {
-          delete: [`${paths.package.path}/main.js`],
+          delete: [`${paths.pkg.path}/main.js`],
         },
         {
-          mkdir: [`${paths.package.temp}`],
+          mkdir: [`${paths.pkg.temp}`],
         },
         {
           archive: [
             {
               source: `${paths.container}`,
-              destination: `${paths.package.temp}/cont.zip`,
+              destination: `${paths.pkg.temp}/cont.zip`,
             },
           ],
         },
@@ -64,39 +33,39 @@ const webpackPlugins = [
           archive: [
             {
               source: `${paths.skin}`,
-              destination: `${paths.package.temp}/main.zip`,
+              destination: `${paths.pkg.temp}/main.zip`,
             },
           ],
         },
         {
           archive: [
             {
-              source: `${paths.package.code}`,
-              destination: `${paths.package.temp}/appc.zip`,
+              source: `${paths.pkg.code}`,
+              destination: `${paths.pkg.temp}/appc.zip`,
             },
           ],
         },
         {
           copy: [
             {
-              source: `${paths.package.path}/*.dnn`,
-              destination: `${paths.package.temp}`,
+              source: `${paths.pkg.path}/*.dnn`,
+              destination: `${paths.pkg.temp}`,
             },
           ],
         },
         {
           copy: [
             {
-              source: `${paths.package.static}/*.{png,txt}`,
-              destination: `${paths.package.temp}`,
+              source: `${paths.pkg.static}/*.{png,txt}`,
+              destination: `${paths.pkg.temp}`,
             },
           ],
         },
         {
           archive: [
             {
-              source: `${paths.package.temp}`,
-              destination: `${paths.package.path}/${paths.package.name}-000000-Install.zip`,
+              source: `${paths.pkg.temp}`,
+              destination: `${paths.pkg.path}/${paths.pkg.name}-000001-Install.zip`,
             },
           ],
         },
@@ -105,11 +74,11 @@ const webpackPlugins = [
   }),
 ];
 
-module.exports = {
+export default {
   mode: 'production',
-  entry: path.resolve(__dirname, 'package/static/manifest.dnn'),
+  entry: resolve(__dirname, 'package/static/manifest.dnn'),
   output: {
-    path: path.resolve(__dirname, `${paths.package.path}`),
+    path: resolve(__dirname, `${paths.pkg.path}`),
   },
   module: {
     rules: [
@@ -123,7 +92,7 @@ module.exports = {
               name: 'manifest.dnn',
             },
           },
-          path.resolve(__dirname, 'package/static/DNN-manifest-loader.js'),
+          resolve(__dirname, 'package/static/DNN-manifest-loader.cjs'),
         ],
       },
     ],

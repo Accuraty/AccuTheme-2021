@@ -9,4 +9,4 @@ function fixMapPath(path, prefix = '.', directory = 'src/styles') {
   return `${prefix}/${directory}/${path.replace(regex, '')}`;
 }
 
-module.exports = fixMapPath;
+export default fixMapPath;

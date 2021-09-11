@@ -1,4 +1,4 @@
-import isTouchDevice from '../lib/is-touch-device';
+import isTouchDevice from '../lib/is-touch-device.js';
 
 export default class NavMenu {
   static defaults = {

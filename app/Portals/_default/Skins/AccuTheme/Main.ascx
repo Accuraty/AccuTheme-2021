@@ -1,3 +1,4 @@
+<div id="skinMain" class="dnn-skin-wrapper skin-main">
 <!--#include file="includes/_preheader.ascx"-->
 <!--#include file="includes/_header.ascx"-->
 
@@ -41,3 +42,4 @@
 </main>
 
 <!--#include file="includes/_footer.ascx"-->
+</div>

@@ -1,5 +1,5 @@
-const del = require('del');
-const { paths } = require('../config');
+import del from 'del';
+import { paths } from '../config/index.js';
 
 function cleanTask() {
   const allCompiledFiles = [
@@ -14,4 +14,4 @@ function cleanTask() {
   return del(allCompiledFiles, { force: true });
 }
 
-exports.clean = cleanTask;
+export const clean = cleanTask;

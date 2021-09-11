@@ -1,4 +1,4 @@
-const { mode } = require('./project');
+import { mode } from './project.js';
 
 /**
  * GULP SASS
@@ -26,29 +26,34 @@ const autoprefixer = {
  * IMAGEMIN
  * https://github.com/sindresorhus/gulp-imagemin
  */
-const imageminPlugin = require('gulp-imagemin');
-const pngquant = require('imagemin-pngquant');
+import { gifsicle, svgo, mozjpeg } from 'gulp-imagemin';
+import pngquant from 'imagemin-pngquant';
 
 const imagemin = {
   plugins: [
     pngquant({
       speed: 6,
-      quality: '70-100', // lossy settings
+      quality: [0.7, 1], // lossy settings
     }),
-    imageminPlugin.gifsicle({ interlaced: true }),
-    imageminPlugin.svgo({
+    gifsicle({ interlaced: true }),
+    svgo({
       plugins: [
-        { cleanupAttrs: true },
-        { cleanupIDs: false },
-        { removeComments: true },
-        { removeDesc: false },
-        { removeStyleElement: true },
-        { removeTitle: false },
-        { removeUnknownsAndDefaults: false }, // keeps `role="image"`
-        { removeViewBox: false },
+        {
+          name: 'preset-default',
+          params: {
+            cleanupAttrs: true,
+            cleanupIDs: false,
+            removeComments: true,
+            removeDesc: false,
+            removeStyleElement: true,
+            removeTitle: false,
+            removeUnknownsAndDefaults: false, // keeps `role="image"`
+            removeViewBox: false,
+          },
+        },
       ],
     }),
-    imageminPlugin.mozjpeg({
+    mozjpeg({
       progressive: true,
       quality: 75,
     }),
@@ -121,9 +126,4 @@ const realFavicon = {
 /**
  * EXPORTS
  */
-module.exports = {
-  gulpSass,
-  autoprefixer,
-  imagemin,
-  realFavicon,
-};
+export { gulpSass, autoprefixer, imagemin, realFavicon };

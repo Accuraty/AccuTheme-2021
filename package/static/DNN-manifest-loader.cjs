@@ -5,7 +5,7 @@ module.exports = function (source) {
   );
   source = source.replace(
     /type\=\"Skin\" version\=\"(.*?)(?=\")/,
-    'type="Skin" version="1.0.1'
+    'type="Skin" version="1.0.2'
   );
   source = source.replace(
     /\<friendlyName\>(.*?)(?=\<)/,
