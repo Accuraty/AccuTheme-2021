@@ -1,11 +1,33 @@
 # AccuTheme
 
-The Accuraty Solutions starter kit for DNN projects.
+The Accuraty Solutions Bootstrap 4.6 based theme starter kit for DNN projects.
+ 
+ - customized Bootstrap with Bootstrap Icons
+ - JS module bundling
+ - CSS optimizations
+ - media file optimizations (images, SVG, videos)
+ - linting (opinionated?)
+ - favicon generator
+ - package to Dnn Zip installer (Webpack)
+ 
+## Roadmap and Feature Ideas
 
-## Project requirements
+ - improved SCSS file structure
+ - improved workflow supporting Modes; deploy, setup, design, develop, staging, golive, production
+ - convert monolithic Build to minimum or configurable
+ - more utility tasks (like package and favicons)
+ - utility to switch Modes and optionally build
+ - convert Gulp tasks to Webpack
+ - rework AccuTheme and AccuKit utilities
+ - rework Env/Config/Settings for Workflow and Mode; Presets/Defaults, Client/Project, Modes
+ - Tailwind ?? (re-architect deploy/setup)
+ - Boostrap v5 ??
+
+## Project requirements and recommendations
 
 - DNN site already deployed
-- [Node >= v12.18.0](https://nodejs.org/en)
+- [Node >= v14.17.x](https://nodejs.org/en) - LTS 
+- [NVM-Windows](https://github.com/coreybutler/nvm-windows) to manage your Node versions
 
 ## Getting started
 
