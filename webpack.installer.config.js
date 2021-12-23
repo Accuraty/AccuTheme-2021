@@ -1,3 +1,6 @@
+// This needs to be the very first import so that it is the first to run,
+// otherwise the env global variable might not contain the contents of the .env file.
+import './gulpfileDir/config/envLoader.js';
 import path, { resolve } from 'path';
 import FileManagerPlugin from 'filemanager-webpack-plugin';
 import * as paths from './gulpfileDir/config/paths.js';
