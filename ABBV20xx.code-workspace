@@ -1,0 +1,36 @@
+{
+  "folders": [
+    {
+      "name": "ABBV20xx (root, GitHub) on DSxxx",
+      "path": "."
+    },
+    {
+      "name": "> AccuTheme - Files",
+      "path": "app/Portals/_default/Skins/AccuTheme"
+    },
+    {
+      "name": "> AccuTheme - Source",
+      "path": "src"
+    },
+    {
+      "name": "> 2sxc Content app",
+      "path": "app/Portals/0/2sxc/Content"
+    },
+    {
+      "name": "AccuCode (GitHub) - /App_Code",
+      "path": "app/App_Code"
+    },
+    {
+      "name": "AccuCUE (GitHub) - /Accu, under 2sxc Content App",
+      "path": "app/Portals/0/2sxc/Content/Accu"
+    },
+  ],
+  "settings": {
+    "files.associations": {
+      ".eslintrc": "json",
+      ".prettierrc": "json",
+      ".stylelintrc": "json"
+    },
+    "html.format.enable": true,
+  }
+}

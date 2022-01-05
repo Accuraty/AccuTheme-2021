@@ -1,0 +1,23 @@
+# Nested projects
+[submodule "2sxc Accu-Content-app"]
+path = app/Portals/0/2sxc/Content/Accu
+url = https://github.com/Accuraty/AccuCUE.git
+
+[submodule "Dnn App_Code AccuCode"]
+path = app/App_Code
+url = https://github.com/Accuraty/AccuCode.git
+
+### Hack
+### it is CRITICAL this .gitmodules file (in the parent) is .gitignore'd
+### in English; tell local Git about the sub-modules, but not GitHub
+### https://github.com/microsoft/vscode/issues/37947#issuecomment-460340426
+# Docs; https://git-scm.com/docs/gitmodules
+
+### When AccuTheme is initially deployed and setup, this file is in
+### the /.vscode folder. The Cloning Locally instructions (README.md)
+### include the optional instructions to copy/rename it.
+
+## optional keys (see docs)
+# update # checkout, rebase, merge, none
+# branch # defaults to HEAD
+# ignore # all, dirty, untracked, none
