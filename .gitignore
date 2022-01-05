@@ -38,3 +38,6 @@ real-favicon-generator.json
 nbproject
 sftp-config.json
 .vscode/sftp.json
+
+# See .vscode/AccuTheme.gitmodules
+.gitmodules
