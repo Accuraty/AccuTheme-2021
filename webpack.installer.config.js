@@ -1,3 +1,6 @@
+// run via `npm run package` (see scripts in package.json)
+// using stuff from /package, this packages a full Dnn installer Zip
+ 
 // This needs to be the very first import so that it is the first to run,
 // otherwise the env global variable might not contain the contents of the .env file.
 import './gulpfileDir/config/envLoader.js';
