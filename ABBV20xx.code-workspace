@@ -13,16 +13,12 @@
       "path": "src"
     },
     {
-      "name": "> 2sxc Content app",
-      "path": "app/Portals/0/2sxc/Content"
+      "name": "> 2sxc (root in /Portals/0)",
+      "path": "app/Portals/0/2sxc"
     },
     {
       "name": "AccuCode (GitHub) - /App_Code",
       "path": "app/App_Code"
-    },
-    {
-      "name": "AccuCUE (GitHub) - /Accu, under 2sxc Content App",
-      "path": "app/Portals/0/2sxc/Content/Accu"
     },
   ],
   "settings": {
@@ -43,6 +39,7 @@
         "args": [
           "-noexit",
           "-command",
+          "Write-Host 'ABBV20xx on DS20xx, using custom (or as-is) Accuraty-2021' -ForegroundColor Yellow;",
           "Write-Host 'Reminder: see the .code-workspace file to update terminal startup commands' -ForegroundColor DarkCyan;",
           "Write-Host '';",
           "nvm list | % { if($_.Contains('*')) { 'NVM: NodeJS v' + $_.Trim(' *') } } ;",
@@ -50,11 +47,11 @@
         ]
       }
     },
-    "NOTE": "Using the client's [primary color] from their branding, #ffaa00, alpha at 75% (C0) for the title bar, 50% activity, and 25% status",
+    "NOTE": "Using the primary color from branding, #0968b1, alpha at 75% (C0) for the title bar, 50% activity, and 25% status",
     "workbench.colorCustomizations": {
-      "titleBar.activeBackground": "#ffaa00c0",
-      "activityBar.background": "#ffaa0080",
-      "statusBar.background": "#ffaa0040"
+      "titleBar.activeBackground": "#0968b1c0",
+      "activityBar.background": "#0968b180",
+      "statusBar.background": "#0968b140"
     },
     "explorer.experimental.fileNesting.enabled": true,
     "explorer.experimental.fileNesting.patterns": {
