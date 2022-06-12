@@ -39,5 +39,21 @@ nbproject
 sftp-config.json
 .vscode/sftp.json
 
-# See .vscode/AccuTheme.gitmodules
+# OHS utilities, https://github.com/Accuraty/AccuTheme-2021/issues/47
+# VS Code hack? >>> See notes in .gitmodules file
 .gitmodules
+.gitmodules-optional
+
+# Accuraty utility; ignore any files OR folders so they do NOT get in to Git/GitHub
+**/*-gitignore*
+**/*-ignore*
+**/*-temp*
+**/*-tmp*
+
+# if AccuCode is setup as a separate project (.gitmodules, /App_Code), uncomment this
+# app/App_Code/
+
+# allow back PersonaBar CSS Themes, https://github.com/Accuraty/AccuTheme-2021/issues/43
+!**/_default/PersonaBarTheme.css
+!**/_default/EditBarTheme.css
+
