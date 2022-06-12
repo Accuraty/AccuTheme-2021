@@ -53,8 +53,8 @@
       "activityBar.background": "#0968b180",
       "statusBar.background": "#0968b140"
     },
-    "explorer.experimental.fileNesting.enabled": true,
-    "explorer.experimental.fileNesting.patterns": {
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
       "webpack.config.js": "webpack.*.config.js",
       "*.code-workspace": ".browserslistrc, .eslint*, .*.json, .git*, .editorconfig, .nvmrc, .*ignore, gulp*.js"
     }
