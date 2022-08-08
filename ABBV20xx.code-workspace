@@ -17,6 +17,10 @@
       "path": "app/Portals/0/2sxc"
     },
     {
+      "name": "AccuShare (GitHub) - 2sxc Accu App",
+      "path": "app/Portals/0/2sxc/Accu"
+    },
+    {
       "name": "AccuCode (GitHub) - /App_Code",
       "path": "app/App_Code"
     },
@@ -39,7 +43,7 @@
         "args": [
           "-noexit",
           "-command",
-          "Write-Host 'ABBV20xx on DS20xx, using custom (or as-is) Accuraty-2021' -ForegroundColor Yellow;",
+          "Write-Host 'ABBV20xx on DS20xx, using custom (or as-is) AccuTheme-2021' -ForegroundColor Yellow;",
           "Write-Host 'Reminder: see the .code-workspace file to update terminal startup commands' -ForegroundColor DarkCyan;",
           "Write-Host '';",
           "nvm list | % { if($_.Contains('*')) { 'NVM: NodeJS v' + $_.Trim(' *') } } ;",
