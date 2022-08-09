@@ -23,18 +23,20 @@
 
       <nav class="collapse navbar-collapse" id="navbarContent" aria-label="Primary navigation" data-component="NavMenu">
         <%-- Site Menu --%>
+        <%-- TODO add TabId of SITE page to IncludeNodes (replace 9999) --%>
         <dnn:MENU
           MenuStyle="menus/SiteMenu"
-          IncludeNodes="9999" <%-- TODO add TabId of added SITE page --%>
+          IncludeNodes="9999" 
           runat="server"
         ></dnn:MENU>
 
         <%-- Primary Nav --%>
+        <%-- TODO add TabId of SITE page to ExcludeNodes (replace 9999) --%>
         <dnn:MENU
           MenuStyle="menus/NavPrimary"
           NodeSelector=""
           IncludeNodes=""
-          ExcludeNodes="9999" <%-- TODO add TabId of added SITE page --%>
+          ExcludeNodes="9999" 
           runat="server"
         ></dnn:MENU>
 
