@@ -4,6 +4,7 @@
   "description": "Starter theme for DNN Platform websites",
   "exports": "./gulpfile.js",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "build": "cross-env NODE_ENV=production gulp build",
     "clean": "gulp clean",
     "favicons": "gulp favicons",
@@ -12,6 +13,9 @@
     "lint:styles": "stylelint --syntax scss",
     "postinstall": "gulp build",
     "package": "webpack --config webpack.installer.config.js"
+  },
+  "resolutions": {
+    "semver-regex": "3.1.4"
   },
   "type": "module",
   "engines": {
