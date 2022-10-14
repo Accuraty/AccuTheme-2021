@@ -15,7 +15,8 @@
     "package": "webpack --config webpack.installer.config.js"
   },
   "resolutions": {
-    "semver-regex": "3.1.4"
+    "semver-regex": "3.1.4",
+    "glob-parent": "5.1.2"
   },
   "type": "module",
   "engines": {
