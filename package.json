@@ -9,8 +9,6 @@
     "clean": "gulp clean",
     "favicons": "gulp favicons",
     "start": "gulp",
-    "lint:scripts": "eslint --format=pretty --fix",
-    "lint:styles": "stylelint --syntax scss",
     "postinstall": "gulp build",
     "package": "webpack --config webpack.installer.config.js"
   },
@@ -56,7 +54,6 @@
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-formatter-pretty": "^4.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-webpack-plugin": "^3.2.0",
     "esm": "^3.2.25",
