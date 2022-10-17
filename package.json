@@ -65,7 +65,6 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-stylelint": "^13.0.0",
-    "husky": "^7.0.4",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^10.0.1",
     "lint-staged": "^11.2.6",
@@ -79,11 +78,6 @@
     "terser-webpack-plugin": "^5.3.6",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.js": [
