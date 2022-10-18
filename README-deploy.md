@@ -36,9 +36,15 @@ Although `sftp.json` is configured to automatically push files to the server, yo
 
 ### 4. Install and build packages
 
+Open package.json and remove the line `"preinstall": "npx npm-force-resolutions",` from `"scripts"`, and save. The install will fail until this is done.
+
 From your terminal, run `npm install`.
 
 After the install is finished, `npm run build` will automatically run. This compiles assets (styles, scripts, etc.), but Gulp won't stay in "watch" mode.
+
+Once that is done running, in package.json Ctrl-Z/add back the line `"preinstall": "npx npm-force-resolutions",` to `"scripts"` and save.
+
+From your terminal, run `npm install`.
 
 ### 5. Create GitHub repo
 
