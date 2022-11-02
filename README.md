@@ -70,9 +70,15 @@ If you are using Visual Studio Code, navigate to the `.vscode/` directory. Dupli
 
 #### 3. Install and build packages
 
-Next, run `npm install`.
+Open package.json, and remove the line under "scripts" (line 7) `"preinstall": "npx npm-force-resolutions",` and save
+
+Next, run `npm install`. If you did not remove the line from package.json the install will fail until you do.
 
 After the install is finished, `npm run build` will automatically run. This compiles assets (styles, scripts, etc.), but Gulp won't stay in "watch" mode.
+
+Back in package.json, add the line `"preinstall": "npx npm-force-resolutions",` back to package.json, and save.
+
+Run `npm install` one more time. 
 
 #### 4. Build the assets
 
