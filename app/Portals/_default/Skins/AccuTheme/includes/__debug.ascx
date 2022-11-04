@@ -32,6 +32,19 @@
       </div>
     </div>
     <hr />
+  
+<pre>
+DNN:         <%=AccuKit11.GetVersion("DotNetNuke") %>
+MS DI:       <%=AccuKit11.GetVersion("Microsoft.Extensions.DependencyInjection") %>
+MailKit:     <%=AccuKit11.GetVersion("MailKit") %>
+Newton:      <%=AccuKit11.GetVersion("Newtonsoft.Json") %>
+2sxc:        <%=AccuKit11.GetVersion("ToSic.Sxc") %>
+ClosedXML:   <%=AccuKit11.GetVersion("ClosedXML") %> (github.com/ClosedXML)
+HtmlToPdf:   <%=AccuKit11.GetVersion("Select.HtmlToPdf") %> (selectpdf.com)
+Booya:       <%=AccuKit11.GetVersion("Booya") %> <!-- not found -->
+AccuKit:     <%=AccuKit11.GetVersion("AccuKit") %> <!-- not found (yet) -->
+AccuTheme:   <%=AccuTheme.Version() %> 
+</pre>
 
     <%-- SMALL PRINT --%>
     <div class="small text-dark">
@@ -46,4 +59,6 @@
     <p class="small font-weight-bold mt-2 mb-0">Debug info only visible from ASL WAN IP addresses and being output from <code>includes/_footer.ascx</code> in Skin.</p>
 
   </div>
+<% } else { %>
+<pre>WAN IP: <%=AccuTheme.GetIpAddress() %></pre>  
 <% } %>
