@@ -25,7 +25,7 @@ Utility functions and helpers.
 
 Any file at the root of the `scripts/` directory will be compiled into separate JavaScript bundles. Scripts needed for the entire site are in `Skin.js`. Add new files for page- and component-specific scripts.
 
-_Note: When you add new individual files at the root of this directory, they will automatically be included in the build process. However, you must manually add them to the template they belong with._
+_Note: When you add new individual files at the root of this directory, they will automatically be included in the build process. E.g. Home.js will compile to dist/Home.bundle.js. However, you must manually add them to the template they belong with. (see Home.ascx)_
 
 ## What about vendor files?
 
