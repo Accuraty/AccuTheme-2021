@@ -2,6 +2,7 @@
 <!--#include file="includes/_preheader.ascx"-->
 <!--#include file="includes/_header.ascx"-->
 
+<%-- see src/scripts/README.md, Individual files - to implement Home (page) specific JS --%>
 <%-- <dnn:DnnJsInclude
   FilePath="dist/Home.bundle.js"
   PathNameAlias="SkinPath"
