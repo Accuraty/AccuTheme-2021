@@ -9,13 +9,7 @@
 >
   <div class="navbar navbar-expand-lg navbar-light">
     <div class="container px-0">
-      <a
-        class="navbar-brand position-relative d-flex"
-        href="/"
-        aria-label="_xx___CLIENT_NAME___xx_"
-      >
-        <!--#include file="_logo.ascx"-->
-      </a>
+      <!--#include file="_logo.ascx"-->
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
