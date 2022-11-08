@@ -109,4 +109,16 @@
     return str;
   }
 
+  // Get the version of an installed DLL in /bin
+  // example: expecting "ToSic.Razor" and we assume its in /bin and add ends in .dll
+  public static string GetVersion(string pathFile) {
+    string target = HttpContext.Current.Server.MapPath("bin/" + pathFile + ".dll");
+    if(System.IO.File.Exists(target)) {
+      return System.Reflection.Assembly.LoadFrom(target).GetName().Version.ToString();
+    }
+    else {
+      return "DLL not found";
+    }
+  }
+
 }
