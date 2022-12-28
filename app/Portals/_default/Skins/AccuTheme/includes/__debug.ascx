@@ -34,15 +34,15 @@
     <hr />
   
 <pre>
-DNN:         <%=AccuKit11.GetVersion("DotNetNuke") %>
-MS DI:       <%=AccuKit11.GetVersion("Microsoft.Extensions.DependencyInjection") %>
-MailKit:     <%=AccuKit11.GetVersion("MailKit") %>
-Newton:      <%=AccuKit11.GetVersion("Newtonsoft.Json") %>
-2sxc:        <%=AccuKit11.GetVersion("ToSic.Sxc") %>
-ClosedXML:   <%=AccuKit11.GetVersion("ClosedXML") %> (github.com/ClosedXML)
-HtmlToPdf:   <%=AccuKit11.GetVersion("Select.HtmlToPdf") %> (selectpdf.com)
-Booya:       <%=AccuKit11.GetVersion("Booya") %> <!-- not found -->
-AccuKit:     <%=AccuKit11.GetVersion("AccuKit") %> <!-- not found (yet) -->
+DNN:         <%=AccuTheme.GetVersion("DotNetNuke") %>
+MS DI:       <%=AccuTheme.GetVersion("Microsoft.Extensions.DependencyInjection") %>
+MailKit:     <%=AccuTheme.GetVersion("MailKit") %>
+Newton:      <%=AccuTheme.GetVersion("Newtonsoft.Json") %>
+2sxc:        <%=AccuTheme.GetVersion("ToSic.Sxc") %>
+ClosedXML:   <%=AccuTheme.GetVersion("ClosedXML") %> (github.com/ClosedXML)
+HtmlToPdf:   <%=AccuTheme.GetVersion("Select.HtmlToPdf") %> (selectpdf.com)
+Booya:       <%=AccuTheme.GetVersion("Booya") %> <!-- not found -->
+AccuKit:     <%=AccuTheme.GetVersion("AccuKit") %> <!-- not found (yet) -->
 AccuTheme:   <%=AccuTheme.Version() %> 
 </pre>
 
