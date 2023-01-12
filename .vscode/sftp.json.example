@@ -29,6 +29,7 @@
     "**/src/",
     "**/README.md",
     "**/*.LICENSE.txt",
+     "**/web.config",
     ".*",
     "package.json",
     "package-lock.json",
