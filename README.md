@@ -1,42 +1,18 @@
 # AccuTheme-2021
 
-The Accuraty Solutions Bootstrap 4.6 based theme starter kit for DNN projects.
- 
- - [ ] customized Bootstrap with Bootstrap Icons
- - [ ] JS module bundling
- - [ ] CSS optimizations
- - [ ] media file optimizations (images, SVG, videos)
- - [ ] linting (opinionated?)
- - [ ] favicon generator, move to Webpack
- - [x] package to Dnn Zip installer (Webpack)
- - [x] converted from CJS to ESM in Sep 2021
- - [x] Node works v16.13+ LTS (Dec 2021)
- - [x] Reconfigure for multi-project (Jan 2022)
- 
-## Roadmap and Feature Ideas
-
- - improved SCSS file structure
- - improved workflow supporting Modes; deploy, setup, design, develop, staging, golive, production
- - convert monolithic Build to minimum or configurable
- - more utility tasks (like package and favicons)
- - utility to switch Modes and optionally build
- - convert Gulp tasks to Webpack (or newer??)
- - rework AccuTheme and AccuKit utilities (see JRF, AccuCode)
- - rework Env/Config/Settings for Workflow and Mode; Presets/Defaults, Client/Project, Modes
- - Boostrap v5 ??
- - TailwindCSS ?? (re-architect deploy/setup)
- 
-
-## Project requirements and recommendations
-
-- DNN site already deployed
-- [Node/NPM](https://nodejs.org/en) - Node >= v14.17.x or v16.x
-- [NVM-Windows](https://github.com/coreybutler/nvm-windows) to manage your Node versions
+Status: no roadmap, fixes and minor improvements from now on. AccuTheme "redux" in the works (20230305 JRF).
 
 ## Getting started
 
 - [Initial setup](/README-deploy.md#initial-setup) - you are starting from scratch
 - [Cloning locally](/README.md#cloning-locally) - first time adding this project to your machine
+- [Next steps](/wiki) <<< ESSENTIAL <<<
+
+## Project requirements and recommendations
+
+- DNN site already deployed
+- [Node/NPM](https://nodejs.org/en) - Node >= v16.18.x
+- [NVM-Windows](https://github.com/coreybutler/nvm-windows) to manage your Node versions
 
 ### Cloning locally
 
@@ -95,3 +71,36 @@ To start watching again, run `npm start`.
 Because you cloned the repository using the GitHub URL, your local repo's `origin` is properly set. However, if you get an error message when you try to push your changes up to remote, it's because you do not have permission to write to the private repo.
 
 Make sure (1) [your GitHub credentials are correct](https://help.github.com/en/articles/caching-your-github-password-in-git), or (2) your GitHub username is added as a collaborator on this project.
+
+
+
+<hr>
+
+# Old roadmap, plans, and related...
+
+The Accuraty Solutions Bootstrap 4.6 based theme starter kit for DNN projects.
+ 
+ - [ ] customized Bootstrap with Bootstrap Icons
+ - [ ] JS module bundling
+ - [ ] CSS optimizations
+ - [ ] media file optimizations (images, SVG, videos)
+ - [ ] linting (opinionated?)
+ - [ ] favicon generator, move to Webpack
+ - [x] package to Dnn Zip installer (Webpack)
+ - [x] converted from CJS to ESM in Sep 2021
+ - [x] Node works v16.13+ LTS (Dec 2021)
+ - [x] Reconfigure for multi-project (Jan 2022)
+ 
+## Roadmap and Feature Ideas
+
+ - improved SCSS file structure
+ - improved workflow supporting Modes; deploy, setup, design, develop, staging, golive, production
+ - convert monolithic Build to minimum or configurable
+ - more utility tasks (like package and favicons)
+ - utility to switch Modes and optionally build
+ - convert Gulp tasks to Webpack (or newer??)
+ - rework AccuTheme and AccuKit utilities (see JRF, AccuCode)
+ - rework Env/Config/Settings for Workflow and Mode; Presets/Defaults, Client/Project, Modes
+ - Boostrap v5 ??
+ - TailwindCSS ?? (re-architect deploy/setup)
+ 
