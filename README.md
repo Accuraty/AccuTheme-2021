@@ -6,7 +6,7 @@ Status: no roadmap, fixes and minor improvements from now on. AccuTheme "redux" 
 
 - [Initial setup](/README-deploy.md#initial-setup) - you are starting from scratch
 - [Cloning locally](/README.md#cloning-locally) - first time adding this project to your machine
-- [Next steps](/wiki) <<< ESSENTIAL <<<
+- [Next steps](../../wiki) <<< ESSENTIAL <<<
 
 ## Project requirements and recommendations
 
