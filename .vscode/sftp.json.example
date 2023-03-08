@@ -35,6 +35,8 @@
     "**/*-temp*",
     "**/*-tmp*",
     "**/*.tmp",
+    "**/*.ts",
+    "**/*.tsx",
     ".*",
     "package.json",
     "package-lock.json",
