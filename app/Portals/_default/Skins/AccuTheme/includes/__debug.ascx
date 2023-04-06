@@ -8,9 +8,9 @@
     <%-- THEME --%>
     <div class="mb-2">
       <p>Theme: 
-        Skin=<strong><%=PortalSettings.DefaultPortalSkin.Split('/')[1].ToUpper() %></strong>, 
-        Layout/Container=<span title="<%=PortalSettings.ActiveTab.SkinSrc %>"><%=System.IO.Path.GetFileNameWithoutExtension(PortalSettings.ActiveTab.SkinSrc) %></span>/<span title="<%=PortalSettings.ActiveTab.ContainerSrc %>"><%=System.IO.Path.GetFileNameWithoutExtension(PortalSettings.ActiveTab.ContainerSrc) %></span>, 
-        Bootstrap=<span title="no plans to upgrade Bootstrap to v5 - 20210808 JRF">v4.6</span>
+        Portal = <strong><%=PortalSettings.DefaultPortalSkin.Split('/')[1].ToUpper() %></strong>, 
+        Admin = <%=PortalSettings.DefaultAdminSkin.Split('/')[1].ToUpper() %>, 
+        <span title="no plans to upgrade Bootstrap to v5 - 20210808 JRF">Bootstrap v4.6.2</span>
       </p>
     </div>
 
@@ -18,10 +18,17 @@
     <div class="">
       <p class="mb-1">Page: TabID=<%=PortalSettings.ActiveTab.TabID %>, Name=<%=PortalSettings.ActiveTab.TabName %>, Title=<%=PortalSettings.ActiveTab.Title %></p>
       <div class="px-3">
+        <div class="mb-0">Theme: 
+          <span title="<%=PortalSettings.ActiveTab.SkinSrc %>">
+            SkinSrc filename=<%=System.IO.Path.GetFileNameWithoutExtension(PortalSettings.ActiveTab.SkinSrc) %>
+          </span>,   
+          <span title="<%=PortalSettings.ActiveTab.ContainerSrc %>">
+            ContainerSrc filename=<%=System.IO.Path.GetFileNameWithoutExtension(PortalSettings.ActiveTab.ContainerSrc) %>
+          </span>
+        </div>
         <div class="mb-0">Status: 
           <span title="Display in Menu/Nav">IsVisible=<%=PortalSettings.ActiveTab.IsVisible %>, </span>  
           <span>Published=<%=PortalSettings.ActiveTab.HasBeenPublished %> </span>
-          
         </div>
         <p class="mb-0">
           Nav: Level=<%=PortalSettings.ActiveTab.Level %>, 
