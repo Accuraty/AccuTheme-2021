@@ -67,9 +67,9 @@
 //  1. Initial variables
 //
 //  These base variables are almost always defined with a direct value,
-//  and they generally begin with `$accu--` prefix for easy identification.
+//  and they generally begin with `$accu-` prefix for easy identification.
 //
-//  Note: Do not use variables that begin with `$accu--` in your stylesheets.
+//  Note: Do not use variables that begin with `$accu-` in your stylesheets.
 //
 // ----------------------------------------------------------------------------
 
@@ -80,27 +80,27 @@
 // # Colors
 // ========
 
-$accu--white:            #fff;
-$accu--gray-100:         #f4f6f8;
-$accu--gray-200:         #e9ecef;
-$accu--gray-300:         #dfe3e8;
-$accu--gray-400:         #c4cdd5;
-$accu--gray-500:         #a7b2bc;
-$accu--gray-600:         #637381;
-$accu--gray-700:         #454f5b;
-$accu--gray-800:         #343c45;
-$accu--gray-900:         #212b36;
-$accu--black:            #000;
+$accu-white: #fff;
+$accu-gray-100: #f4f6f8;
+$accu-gray-200: #e9ecef;
+$accu-gray-300: #dfe3e8;
+$accu-gray-400: #c4cdd5;
+$accu-gray-500: #a7b2bc;
+$accu-gray-600: #637381;
+$accu-gray-700: #454f5b;
+$accu-gray-800: #343c45;
+$accu-gray-900: #212b36;
+$accu-black: #000;
 
-$accu--blue:             #0872c4;
-$accu--indigo:           #5653cd;
-$accu--purple:           #773ab0;
-$accu--pink:             #e83e8c;
-$accu--red:              #cb2431;
-$accu--orange:           #ff8a00;
-$accu--yellow:           #ffc107;
-$accu--green:            #2ea44f;
-$accu--teal:             #07b6ab;
+$accu-blue: #0872c4;
+$accu-indigo: #5653cd;
+$accu-purple: #773ab0;
+$accu-pink: #e83e8c;
+$accu-red: #cb2431;
+$accu-orange: #ff8a00;
+$accu-yellow: #ffc107;
+$accu-green: #2ea44f;
+$accu-teal: #07b6ab;
 
 // Third-party brand colors
 // Resource: http://brandcolors.net
@@ -123,44 +123,44 @@ $youtube-primary:       #f00;
 // ----------------------------------------------------------------------------
 
 /* stylelint-disable */
-$accu--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$accu--font-family-serif: "Georgia", "Times New Roman", "Times", serif;
-$accu--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$accu-font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$accu-font-family-serif: "Georgia", "Times New Roman", "Times", serif;
+$accu-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 /* stylelint-enable */
 
 // Assumes the browser default; typically `16px`.
 // The px values shown below are based on a 16px root.
-$accu--font-size-base:       1rem;
+$accu-font-size-base: 1rem;
 
-$accu--font-size-xl:        $accu--font-size-base * 1.5;    // 24px
-$accu--font-size-lg:        $accu--font-size-base * 1.25;   // 20px
-$accu--font-size-sm:        $accu--font-size-base * .875;   // 14px
-$accu--font-size-xs:        $accu--font-size-base * .75;    // 12px
+$accu-font-size-xl: $accu-font-size-base * 1.5; // 24px
+$accu-font-size-lg: $accu-font-size-base * 1.25; // 20px
+$accu-font-size-sm: $accu-font-size-base * .875; // 14px
+$accu-font-size-xs: $accu-font-size-base * .75; // 12px
 
-$accu--h1-font-size:        $accu--font-size-base * 3.25;   // 52px
-$accu--h2-font-size:        $accu--font-size-base * 2.875;  // 46px
-$accu--h3-font-size:        $accu--font-size-base * 2.375;  // 38px
-$accu--h4-font-size:        $accu--font-size-base * 1.875;  // 30px
-$accu--h5-font-size:        $accu--font-size-base * 1.5;    // 24px
-$accu--h6-font-size:        $accu--font-size-base * 1.125;  // 18px
+$accu-h1-font-size: $accu-font-size-base * 3.25; // 52px
+$accu-h2-font-size: $accu-font-size-base * 2.875; // 46px
+$accu-h3-font-size: $accu-font-size-base * 2.375; // 38px
+$accu-h4-font-size: $accu-font-size-base * 1.875; // 30px
+$accu-h5-font-size: $accu-font-size-base * 1.5; // 24px
+$accu-h6-font-size: $accu-font-size-base * 1.125; // 18px
 
-$accu--font-size-jumbo-1:   6rem;     // 96px
-$accu--font-size-jumbo-2:   5.5rem;   // 88px
-$accu--font-size-jumbo-3:   4.5rem;   // 72px
-$accu--font-size-jumbo-4:   3.75rem;  // 60px
+$accu-font-size-jumbo-1: 6rem; // 96px
+$accu-font-size-jumbo-2: 5.5rem; // 88px
+$accu-font-size-jumbo-3: 4.5rem; // 72px
+$accu-font-size-jumbo-4: 3.75rem; // 60px
 
-$accu--font-weight-lighter:  lighter;
-$accu--font-weight-light:    300;
-$accu--font-weight-normal:   400;
-$accu--font-weight-medium:   500;
-$accu--font-weight-semibold: 600;
-$accu--font-weight-bold:     700;
-$accu--font-weight-black:    900;
-$accu--font-weight-bolder:   bolder;
+$accu-font-weight-lighter: lighter;
+$accu-font-weight-light: 300;
+$accu-font-weight-normal: 400;
+$accu-font-weight-medium: 500;
+$accu-font-weight-semibold: 600;
+$accu-font-weight-bold: 700;
+$accu-font-weight-black: 900;
+$accu-font-weight-bolder: bolder;
 
-$accu--line-height-tight:    1.25;
-$accu--line-height-normal:   1.5;
-$accu--line-height-loose:    1.8;
+$accu-line-height-tight: 1.25;
+$accu-line-height-normal: 1.5;
+$accu-line-height-loose: 1.8;
 
 
 
@@ -171,8 +171,8 @@ $accu--line-height-loose:    1.8;
 
 // Used to set height and spacing on various components
 // (e.g., add top margin to `<main>` when navbar is fixed to top).
-$accu--navbar-height-xs:   60px;
-$accu--navbar-height-md:   72px;
+$accu-navbar-height-xs: 60px;
+$accu-navbar-height-md: 72px;
 
 
 
@@ -181,8 +181,8 @@ $accu--navbar-height-md:   72px;
 // # Transition
 // ============
 
-$accu--transition-timing-function:  ease-in-out;
-$accu--transition-duration:         120ms;
+$accu-transition-timing-function: ease-in-out;
+$accu-transition-duration: 120ms;
 
 
 
@@ -191,14 +191,14 @@ $accu--transition-duration:         120ms;
 // # Border
 // ========
 
-$accu--border-width-normal:  1px;
-$accu--border-width-thick:   4px;
+$accu-border-width-normal: 1px;
+$accu-border-width-thick: 4px;
 
-$accu--border-color:         $accu--gray-300;
+$accu-border-color: $accu-gray-300;
 
-$accu--border-radius-sm:     .2rem;
-$accu--border-radius:        .25rem;
-$accu--border-radius-lg:     .3rem;
+$accu-border-radius-sm: .2rem;
+$accu-border-radius: .25rem;
+$accu-border-radius-lg: .3rem;
 
 
 
@@ -207,10 +207,10 @@ $accu--border-radius-lg:     .3rem;
 // # Box Shadow
 // ============
 
-$accu--box-shadow-sm:      0 .125rem .25rem rgba($accu--black, .075);
-$accu--box-shadow:         0 .5rem 1rem rgba($accu--black, .15);
-$accu--box-shadow-lg:      0 1rem 3rem rgba($accu--black, .175);
-$accu--box-shadow-hover:   0 .75rem 1.75rem -.125rem rgba($accu--black, .2), 0 .375rem .875rem -.0625rem rgba($accu--black, .15);
+$accu-box-shadow-sm: 0 .125rem .25rem rgba($accu-black, .075);
+$accu-box-shadow: 0 .5rem 1rem rgba($accu-black, .15);
+$accu-box-shadow-lg: 0 1rem 3rem rgba($accu-black, .175);
+$accu-box-shadow-hover: 0 .75rem 1.75rem -.125rem rgba($accu-black, .2), 0 .375rem .875rem -.0625rem rgba($accu-black, .15);
 
 
 
@@ -219,9 +219,9 @@ $accu--box-shadow-hover:   0 .75rem 1.75rem -.125rem rgba($accu--black, .2), 0 .
 // # Bootstrap grid
 // ================
 
-$accu--grid-columns:        12;
-$accu--grid-gutter-width:   2rem;
-$accu--grid-row-columns:    6;
+$accu-grid-columns: 12;
+$accu-grid-gutter-width: 2rem;
+$accu-grid-row-columns: 6;
 
 
 
@@ -273,17 +273,17 @@ $skin-image-path: "#{$skin-media-path}/images";
 // Reference: bootstrap/_variables.scss:6
 // ----------------------------------------------------------------------------
 
-$white:     $accu--white;
-$gray-100:  $accu--gray-100;
-$gray-200:  $accu--gray-200;
-$gray-300:  $accu--gray-300;
-$gray-400:  $accu--gray-400;
-$gray-500:  $accu--gray-500;
-$gray-600:  $accu--gray-600;
-$gray-700:  $accu--gray-700;
-$gray-800:  $accu--gray-800;
-$gray-900:  $accu--gray-900;
-$black:     $accu--black;
+$white: $accu-white;
+$gray-100: $accu-gray-100;
+$gray-200: $accu-gray-200;
+$gray-300: $accu-gray-300;
+$gray-400: $accu-gray-400;
+$gray-500: $accu-gray-500;
+$gray-600: $accu-gray-600;
+$gray-700: $accu-gray-700;
+$gray-800: $accu-gray-800;
+$gray-900: $accu-gray-900;
+$black: $accu-black;
 
 $grays: ();
 $grays: map-merge(
@@ -301,15 +301,15 @@ $grays: map-merge(
   $grays
 );
 
-$blue:          $accu--blue;
-$indigo:        $accu--indigo;
-$purple:        $accu--purple;
-$pink:          $accu--pink;
-$red:           $accu--red;
-$orange:        $accu--orange;
-$yellow:        $accu--yellow;
-$green:         $accu--green;
-$teal:          $accu--teal;
+$blue: $accu-blue;
+$indigo: $accu-indigo;
+$purple: $accu-purple;
+$pink: $accu-pink;
+$red: $accu-red;
+$orange: $accu-orange;
+$yellow: $accu-yellow;
+$green: $accu-green;
+$teal: $accu-teal;
 
 $colors: (
   "blue":       $blue,
@@ -525,9 +525,9 @@ $container-max-widths: (
 // Reference: bootstrap/_variables.scss:221
 // ----------------------------------------------------------------------------
 
-$grid-columns:                $accu--grid-columns;
-$grid-gutter-width:           $accu--grid-gutter-width;
-$grid-row-columns:            $accu--grid-row-columns;
+$grid-columns: $accu-grid-columns;
+$grid-gutter-width: $accu-grid-gutter-width;
+$grid-row-columns: $accu-grid-row-columns;
 
 
 
@@ -541,23 +541,23 @@ $grid-row-columns:            $accu--grid-row-columns;
 // Reference: bootstrap/_variables.scss:230
 // ----------------------------------------------------------------------------
 
-$line-height-lg:              $accu--line-height-normal;
-$line-height-sm:              $accu--line-height-normal;
+$line-height-lg: $accu-line-height-normal;
+$line-height-sm: $accu-line-height-normal;
 
-$border-width:                $accu--border-width-normal;
-$border-color:                $accu--border-color;
+$border-width: $accu-border-width-normal;
+$border-color: $accu-border-color;
 
-$border-radius:               $accu--border-radius;
-$border-radius-lg:            $accu--border-radius-lg;
-$border-radius-sm:            $accu--border-radius-sm;
+$border-radius: $accu-border-radius;
+$border-radius-lg: $accu-border-radius-lg;
+$border-radius-sm: $accu-border-radius-sm;
 
 $rounded-pill:                50rem;
 
-$box-shadow-sm:               $accu--box-shadow-sm;
-$box-shadow:                  $accu--box-shadow;
-$box-shadow-lg:               $accu--box-shadow-lg;
+$box-shadow-sm: $accu-box-shadow-sm;
+$box-shadow: $accu-box-shadow;
+$box-shadow-lg: $accu-box-shadow-lg;
 // Custom variable added to AccuTheme
-$box-shadow-hover:            $accu--box-shadow-hover;
+$box-shadow-hover: $accu-box-shadow-hover;
 
 $component-active-color:      $white;
 $component-active-bg:         theme-color("primary");
@@ -567,8 +567,8 @@ $caret-vertical-align:        $caret-width * .85;
 $caret-spacing:               $caret-width * .85;
 
 // Custom variables added to AccuTheme
-$transition-duration:         $accu--transition-duration;
-$transition-timing-function:  $accu--transition-timing-function;
+$transition-duration: $accu-transition-duration;
+$transition-timing-function: $accu-transition-timing-function;
 
 $transition-base:             all $transition-duration $transition-timing-function;
 $transition-fade:             opacity .15s linear;
@@ -591,41 +591,41 @@ $embed-responsive-aspect-ratios: (
 // Reference: bootstrap/_variables.scss:272
 // ----------------------------------------------------------------------------
 
-$font-family-sans-serif:      $accu--font-family-sans-serif;
-$font-family-monospace:       $accu--font-family-monospace;
+$font-family-sans-serif: $accu-font-family-sans-serif;
+$font-family-monospace: $accu-font-family-monospace;
 $font-family-base:            $font-family-sans-serif;
 // Custom variable added to AccuTheme
-$font-family-serif:           $accu--font-family-serif;
+$font-family-serif: $accu-font-family-serif;
 
-$font-size-base:              $accu--font-size-base;
-$font-size-lg:                $accu--font-size-lg;
-$font-size-sm:                $accu--font-size-sm;
+$font-size-base: $accu-font-size-base;
+$font-size-lg: $accu-font-size-lg;
+$font-size-sm: $accu-font-size-sm;
 // Custom variables added to AccuTheme
-$font-size-xl:                $accu--font-size-xl;
-$font-size-xs:                $accu--font-size-xs;
+$font-size-xl: $accu-font-size-xl;
+$font-size-xs: $accu-font-size-xs;
 
-$font-weight-lighter:         $accu--font-weight-lighter;
-$font-weight-light:           $accu--font-weight-light;
-$font-weight-normal:          $accu--font-weight-normal;
-$font-weight-bold:            $accu--font-weight-bold;
-$font-weight-bolder:          $accu--font-weight-bolder;
+$font-weight-lighter: $accu-font-weight-lighter;
+$font-weight-light: $accu-font-weight-light;
+$font-weight-normal: $accu-font-weight-normal;
+$font-weight-bold: $accu-font-weight-bold;
+$font-weight-bolder: $accu-font-weight-bolder;
 // Custom variables added to AccuTheme
-$font-weight-medium:          $accu--font-weight-medium;
-$font-weight-semibold:        $accu--font-weight-semibold;
-$font-weight-black:           $accu--font-weight-black;
+$font-weight-medium: $accu-font-weight-medium;
+$font-weight-semibold: $accu-font-weight-semibold;
+$font-weight-black: $accu-font-weight-black;
 
-$font-weight-base:            $accu--font-weight-normal;
-$line-height-base:            $accu--line-height-normal;
+$font-weight-base: $accu-font-weight-normal;
+$line-height-base: $accu-line-height-normal;
 // Custom variables added to AccuTheme
-$line-height-tight:           $accu--line-height-tight;
-$line-height-loose:           $accu--line-height-loose;
+$line-height-tight: $accu-line-height-tight;
+$line-height-loose: $accu-line-height-loose;
 
-$h1-font-size:                $accu--h1-font-size;
-$h2-font-size:                $accu--h2-font-size;
-$h3-font-size:                $accu--h3-font-size;
-$h4-font-size:                $accu--h4-font-size;
-$h5-font-size:                $accu--h5-font-size;
-$h6-font-size:                $accu--h6-font-size;
+$h1-font-size: $accu-h1-font-size;
+$h2-font-size: $accu-h2-font-size;
+$h3-font-size: $accu-h3-font-size;
+$h4-font-size: $accu-h4-font-size;
+$h5-font-size: $accu-h5-font-size;
+$h6-font-size: $accu-h6-font-size;
 
 $headings-margin-bottom:      $spacer / 2;
 $headings-font-family:        null;
@@ -633,10 +633,10 @@ $headings-font-weight:        $font-weight-medium;
 $headings-line-height:        $line-height-tight;
 $headings-color:              null;
 
-$display1-size:               $accu--font-size-jumbo-1;
-$display2-size:               $accu--font-size-jumbo-2;
-$display3-size:               $accu--font-size-jumbo-3;
-$display4-size:               $accu--font-size-jumbo-4;
+$display1-size: $accu-font-size-jumbo-1;
+$display2-size: $accu-font-size-jumbo-2;
+$display3-size: $accu-font-size-jumbo-3;
+$display4-size: $accu-font-size-jumbo-4;
 
 $display1-weight:             $font-weight-light;
 $display2-weight:             $font-weight-light;
@@ -657,7 +657,7 @@ $blockquote-font-size:        1em;
 // Custom variables added to AccuTheme
 $blockquote-font-style:       normal;
 $blockquote-border-color:     $gray-200;
-$blockquote-border-width:     $accu--border-width-thick;
+$blockquote-border-width: $accu-border-width-thick;
 $blockquote-bg-color:         $gray-100;
 
 $hr-border-color:             rgba($black, .1);
@@ -1144,8 +1144,8 @@ $navbar-dark-brand-color:                 $navbar-dark-active-color;
 $navbar-dark-brand-hover-color:           $navbar-dark-active-color;
 
 // Custom variables added to AccuTheme
-$navbar-height-xs:                  $accu--navbar-height-xs;
-$navbar-height-md:                  $accu--navbar-height-md;
+$navbar-height-xs: $accu-navbar-height-xs;
+$navbar-height-md: $accu-navbar-height-md;
 
 
 
