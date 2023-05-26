@@ -27,7 +27,7 @@
     foreach (var node in nodes) {
       var dropdownAttributes = buildDropdownAttributes(node);
 
-      <div id="SiteMenu" class="dropdown">
+      <div id="site-menu" class="dropdown">
         <button class="btn btn-lg btn-primary dropdown-toggle" type="button" @dropdownAttributes>@node.Text</button>
         @RenderChildren(node)
       </div>

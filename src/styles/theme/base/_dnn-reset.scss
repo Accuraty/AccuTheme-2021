@@ -46,6 +46,7 @@ body:not(.dnnEditState) .DNNEmptyPane {
   height: auto !important;
 }
 
+/* stylelint-disable selector-id-pattern */
 #dnnModuleDigitalAssetsMainToolbar,
 #dnnModuleDigitalAssetsSelectionToolbar {
   height: auto !important;
@@ -53,6 +54,7 @@ body:not(.dnnEditState) .DNNEmptyPane {
   padding: .375rem .5rem !important;
   @include clearfix();
 }
+/* stylelint-enable selector-id-pattern */
 
 .dnnEditState .dnnModuleManager {
   width: 100%;
