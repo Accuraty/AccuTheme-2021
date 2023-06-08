@@ -2,7 +2,7 @@
 import pkg from 'gulp';
 const { src, dest } = pkg;
 
-import stylelint from 'gulp-stylelint';
+import stylelint from '@ronilaukkarinen/gulp-stylelint';
 import stylelintFormatter from 'stylelint-formatter-pretty';
 
 import { paths, project } from '../config/index.js';
