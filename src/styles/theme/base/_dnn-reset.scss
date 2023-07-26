@@ -212,7 +212,7 @@ a {
 
 ul,
 ol {
-  list-style: initial;
+  // list-style: initial; // This is causing OLs to not show numbers
   margin-bottom: 0;
   margin-left: 0;
   padding-left: 1.25rem;
