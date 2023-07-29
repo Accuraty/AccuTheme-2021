@@ -23,6 +23,10 @@ Thumbs.db
 package/.tmp/
 real-favicon-generator.json
 
+# ENVIRONMENT
+.env
+.env.*
+
 # MISC FILES
 *~
 *.zip
@@ -38,6 +42,7 @@ real-favicon-generator.json
 nbproject
 sftp-config.json
 .vscode/sftp.json
+app/web.config
 
 # OHS utilities, https://github.com/Accuraty/AccuTheme-2021/issues/47
 # VS Code hack? >>> See notes in .gitmodules file
