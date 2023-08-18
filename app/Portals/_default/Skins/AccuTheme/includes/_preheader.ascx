@@ -106,7 +106,7 @@ Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 />
 --%>
 <%-- RESULT:
-<script src="URL_TO_FILE_HERE.js" asyn defer crossorigin:anonymous type="text/javascript"></script>
+<script src="URL_TO_FILE_HERE.js" async defer crossorigin:anonymous type="text/javascript"></script>
 
 Caveat: above is a hack to make the result "pretty", 
 Non-hack version is: HtmlAttributesAsString="async:async,defer:defer,crossorigin:anonymous"
