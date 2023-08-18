@@ -30,6 +30,26 @@ CSS priorities and suggested order (note that * denotes a core DNN file):
 Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 ========================================================================== --%>
 
+<%-- TYPEKIT example, steps to use:
+1. update the [KitId] 
+2. uncomment it 
+3. delete this comment so future you (or someone) is not confused
+--%>
+<%-- Adobe Fonts (TypeKit)
+- https://fonts.adobe.com/my_fonts#web_projects-section
+- kit includes FONT NAMES, needs to be updated once fonts are final
+--%>
+<%-- 
+<dnn:DnnCssInclude
+  FilePath="https://use.typekit.net/[KitId].css"
+  HtmlAttributesAsString="async defer crossorigin:anonymous"
+  Priority="1"
+  runat="server"
+/>
+--%>
+<%--
+========================================================================== --%>
+
 <%-- YOU CAN DELETE THIS FROM A NEW PROJECT
 
   I'd love to remove the `default.css` stylesheet, but many of the styles are
@@ -81,14 +101,18 @@ Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
 <dnn:DnnJsInclude
   FilePath="URL_TO_FILE_HERE.js"
   Priority="100"
-  HtmlAttributesAsString="async:async,defer:defer"
+  HtmlAttributesAsString="async defer crossorigin:anonymous"
   runat="server"
 />
 --%>
 <%-- RESULT:
-<script src="URL_TO_FILE_HERE.js" async="async" defer="defer" type="text/javascript"></script>
+<script src="URL_TO_FILE_HERE.js" asyn defer crossorigin:anonymous type="text/javascript"></script>
 
-Reference: https://dnndocs.com/content/tutorials/client-resources/index.html#additional-attributes
+Caveat: above is a hack to make the result "pretty", 
+Non-hack version is: HtmlAttributesAsString="async:async,defer:defer,crossorigin:anonymous"
+read the details here
+https://github.com/Accuraty/AccuTheme-2021/issues/73
+Reference: https://docs.dnncommunity.org/content/tutorials/client-resources/index.html#additional-attributes
 ========================================================================== --%>
 
 <dnn:DnnJsInclude
@@ -107,7 +131,8 @@ Reference: https://dnndocs.com/content/tutorials/client-resources/index.html#add
   runat="server"
 />
 
-<% 
+<%-- example of conditional; loading IF the file exists --%>
+<%
 if ( AccuTheme.skinFileExists(AccuTheme.SkinJsPath, "common.bundle.js") ) 
 { 
   ClientResourceManager.RegisterScript(
@@ -135,3 +160,23 @@ if ( AccuTheme.skinFileExists(AccuTheme.SkinJsPath, "common.bundle.js") )
   Priority="104"
   runat="server"
 />
+
+<%-- FONTAWESOME example, steps to use:
+1. update the [KitId] 
+2. uncomment it 
+3. delete this comment so future you (or someone) is not confused
+--%>
+<%-- FontAwesome Pro, Kits are managed here; https://fontawesome.com/kits
+- <script src="https://kit.fontawesome.com/321abc3210.js" crossorigin="anonymous"></script>
+--%>
+<%-- 
+<dnn:DnnJsInclude
+  FilePath="https://kit.fontawesome.com/[KitId].js"
+  ForceProvider="DnnFormBottomProvider"
+  HtmlAttributesAsString="async defer crossorigin:anonymous"
+  Priority="105"
+  runat="server"
+/>
+--%>
+<%--
+========================================================================== --%>
