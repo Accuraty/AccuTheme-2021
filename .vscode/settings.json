@@ -15,11 +15,6 @@
       "mode": "auto"
     }
   ],
-  "files.associations": {
-    ".eslintrc": "json",
-    ".prettierrc": "json",
-    ".stylelintrc": "json"
-  },
   "files.exclude": {
     "**/.git": true,
     "**/CVS": true,
@@ -33,7 +28,6 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  "html.format.enable": true,
   "html.format.preserveNewLines": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "less.validate": false,
@@ -43,7 +37,6 @@
   "scss.lint.emptyRules": "ignore",
   "scss.lint.universalSelector": "warning",
   "scss.validate": false,
-  "stylelint.enable": true,
   "[html]": {
     "editor.formatOnSave": false
   },
