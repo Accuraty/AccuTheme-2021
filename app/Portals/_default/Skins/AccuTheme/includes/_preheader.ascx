@@ -26,8 +26,9 @@ CSS priorities and suggested order (note that * denotes a core DNN file):
   25.   Container CSS*
   30.   Specific Container CSS*
   35.   Portal CSS*
-
-Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
+--%>
+<%--
+Reference: https://www.dnnsoftware.com/wiki/client-resource-management-api
 ========================================================================== --%>
 
 <%-- TYPEKIT example, steps to use:
@@ -93,8 +94,9 @@ JS priorities and suggested order (note that * denotes a core DNN file):
   101.  Runtime: Code needed for Webpack to execute
   102.  Vendors: Node modules (bundled by Webpack)
   103.  Skin: Global scripts (bundle by Webpack)
-
-Reference: http://www.dnnsoftware.com/wiki/client-resource-management-api
+--%>
+<%--
+Reference: https://www.dnnsoftware.com/wiki/client-resource-management-api
 ========================================================================== --%>
 
 <%-- SCRIPT WITH ASYNC AND DEFER FROM A CDN
