@@ -6,8 +6,11 @@ Thumbs.db
 **/node_modules/
 **/yarn-error.log
 **/npm-debug.log
+# for a template, we exclude this from getting checked in
 package-lock.json
-
+# for a project, we do NOT exclude this
+# package-lock.json
+ 
 # ASSETS
 **/dist/
 **/public/
@@ -48,15 +51,19 @@ app/web.config
 # OHS utilities, https://github.com/Accuraty/AccuTheme-2021/issues/47
 # VS Code hack? >>> See notes in .gitmodules file
 .gitmodules
-.gitmodules-optional
 
 # Accuraty utility; ignore any files OR folders so they do NOT get in to Git/GitHub
-**/*-gitignore*
-**/*-tmp*
-
-# if AccuCode is setup as a separate project (.gitmodules, /App_Code), uncomment this
-# app/App_Code/
+**/*-gitignore.*
+**/*-tmp.*
 
 # allow back PersonaBar CSS Themes, https://github.com/Accuraty/AccuTheme-2021/issues/43
 !**/_default/PersonaBarTheme.css
 !**/_default/EditBarTheme.css
+
+# .sln/.csproj VS Code IntelliSense detrious to ignore
+obj/
+.vs/
+bin/
+
+# [to be removed?, we don't do this anymore ] if AccuCode is setup as a separate project (.gitmodules, /App_Code), uncomment this
+# app/App_Code/
