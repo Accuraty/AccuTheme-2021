@@ -60,7 +60,7 @@ app/web.config
 !**/_default/PersonaBarTheme.css
 !**/_default/EditBarTheme.css
 
-# .sln/.csproj VS Code IntelliSense detrious to ignore
+# .sln/.csproj VS Code IntelliSense detritus to ignore
 obj/
 .vs/
 bin/
