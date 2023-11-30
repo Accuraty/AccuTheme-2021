@@ -11,7 +11,6 @@
 // ============================================================================
 
 
-
 // ----------------------------------------------------------------------------
 //
 //  1. Quick, specific fixes
@@ -74,8 +73,6 @@ body:not(.dnnEditState) .DNNEmptyPane {
 }
 
 
-
-
 // ----------------------------------------------------------------------------
 //
 //  2. Reset DNN styles from `_default.css`
@@ -133,8 +130,6 @@ body:not(.dnnEditState) .DNNEmptyPane {
 }
 
 
-
-
 //
 // Headings
 // ========
@@ -150,8 +145,6 @@ h6 {
   font-weight: initial;
   letter-spacing: initial;
 }
-
-
 
 
 //
@@ -183,7 +176,6 @@ blockquote {
 }
 
 
-
 //
 // Anchor styles
 // =============
@@ -202,8 +194,6 @@ a {
     color: inherit;
   }
 }
-
-
 
 
 //
@@ -229,7 +219,6 @@ li {
     line-height: inherit;
   }
 }
-
 
 
 //
@@ -267,7 +256,6 @@ li {
     border-color: theme-color-level("success", -9);
   }
 }
-
 
 
 //
@@ -313,8 +301,6 @@ legend.error {
 }
 
 
-
-
 //
 // Password Strength
 // =================
@@ -346,7 +332,6 @@ legend.error {
     }
   }
 }
-
 
 
 //
@@ -425,8 +410,6 @@ a.dnnTertiaryAction {
     color: $gray-800;
   }
 }
-
-
 
 
 //
