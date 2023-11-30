@@ -1,4 +1,4 @@
-import del from 'del';
+import { deleteAsync as del } from 'del';
 import { paths } from '../config/index.js';
 
 function cleanTask() {

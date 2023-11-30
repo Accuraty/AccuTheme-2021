@@ -23,7 +23,7 @@
 
   private void AddFavicons()
   {
-      string Favicons = "";
+      string Favicons = "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/Portals/_default/Skins/AccuTheme/dist/media/images/apple-touch-icon.png\">\n<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/Portals/_default/Skins/AccuTheme/dist/media/images/favicon-32x32.png\">\n<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/Portals/_default/Skins/AccuTheme/dist/media/images/favicon-16x16.png\">\n<link rel=\"manifest\" href=\"/Portals/_default/Skins/AccuTheme/dist/media/images/site.webmanifest\">\n<link rel=\"mask-icon\" href=\"/Portals/_default/Skins/AccuTheme/dist/media/images/safari-pinned-tab.svg\" color=\"#5bbad5\">\n<link rel=\"shortcut icon\" href=\"/Portals/_default/Skins/AccuTheme/dist/media/images/favicon.ico\">\n<meta name=\"msapplication-TileColor\" content=\"#da532c\">\n<meta name=\"msapplication-config\" content=\"/Portals/_default/Skins/AccuTheme/dist/media/images/browserconfig.xml\">\n<meta name=\"theme-color\" content=\"#ffffff\">";
       LiteralControl FaviconsMarkup = new LiteralControl(Favicons);
       Page.Header.Controls.Add(FaviconsMarkup);
   }
