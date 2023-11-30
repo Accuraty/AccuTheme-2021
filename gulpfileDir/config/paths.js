@@ -5,7 +5,7 @@ import { name, faviconFile } from './project.js';
 const SRC_NAME = 'src';
 const DIST_NAME = 'dist';
 
-const appPath = `./app`;
+const appPath = `./dnn`;
 const portalPath = `${appPath}/Portals/_default`;
 const skinPath = `${portalPath}/Skins/${name}`;
 const containerPath = `${portalPath}/Containers/${name}`;

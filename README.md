@@ -32,9 +32,9 @@ git clone _GITHUB_URL_HERE_
 Make sure your terminal's CWD (current working directory) is the root of the project (the folder where you just cloned the main project in to), then run the following commands:
 
 ```
-git clone https://github.com/Accuraty/AccuCode ./app/App_Code
+git clone https://github.com/Accuraty/AccuCode ./dnn/App_Code
 
-git clone https://github.com/Accuraty/AccuCUE ./app/Portals/0/2sxc/Content/Accu
+git clone https://github.com/Accuraty/AccuCUE ./dnn/Portals/0/2sxc/Content/Accu
 
 copy .vscode/AccuTheme.gitmodules .gitmodules
 ```

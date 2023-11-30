@@ -3,7 +3,7 @@
   "host": "___dsNNNN.accuraty.net",
   "username": "___abbvdnnabc",
   "password": "___PASSWORD",
-  "context": "./app",
+  "context": "./dnn",
   "protocol": "ftp",
   "port": 21,
   "secure": true,

@@ -1,10 +1,10 @@
 # Nested projects
 [submodule "2sxc Accu-Content-app"]
-path = app/Portals/0/2sxc/Content/Accu
+path = dnn/Portals/0/2sxc/Content/Accu
 url = https://github.com/Accuraty/AccuCUE.git
 
 [submodule "Dnn App_Code AccuCode"]
-path = app/App_Code
+path = dnn/App_Code
 url = https://github.com/Accuraty/AccuCode.git
 
 ### Hack
