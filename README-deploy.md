@@ -32,7 +32,7 @@ If you are using Visual Studio Code, go to the `.vscode/` directory. Duplicate `
 
 ### 3. Getting code to the server
 
-Although `sftp.json` is configured to automatically push files to the server, you need to manually upload certain directories when you first set up a project. Right-click on the `app/` folder and choose "Upload Folder" from the menu.
+Although `sftp.json` is configured to automatically push files to the server, you need to manually upload certain directories when you first set up a project. Right-click on the `dnn/` folder and choose "Upload Folder" from the menu.
 
 ### 4. Install and build packages
 

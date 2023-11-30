@@ -6,7 +6,7 @@
     },
     {
       "name": "> AccuTheme - Files",
-      "path": "app/Portals/_default/Skins/AccuTheme"
+      "path": "dnn/Portals/_default/Skins/AccuTheme"
     },
     {
       "name": "> AccuTheme - Source",
@@ -14,15 +14,15 @@
     },
     {
       "name": "> 2sxc (root in /Portals/0)",
-      "path": "app/Portals/0/2sxc"
+      "path": "dnn/Portals/0/2sxc"
     },
     {
       "name": "AccuShare (GitHub) - 2sxc Accu App",
-      "path": "app/Portals/0/2sxc/Accu"
+      "path": "dnn/Portals/0/2sxc/Accu"
     },
     {
       "name": "AccuCode (GitHub) - /App_Code",
-      "path": "app/App_Code"
+      "path": "dnn/App_Code"
     },
   ],
   "settings": {
