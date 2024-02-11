@@ -16,14 +16,6 @@
       "name": "> 2sxc (root in /Portals/0)",
       "path": "dnn/Portals/0/2sxc"
     },
-    {
-      "name": "AccuShare (GitHub) - 2sxc Accu App",
-      "path": "dnn/Portals/0/2sxc/Accu"
-    },
-    {
-      "name": "AccuCode (GitHub) - /App_Code",
-      "path": "dnn/App_Code"
-    },
   ],
   "settings": {
     "files.associations": {
@@ -43,7 +35,7 @@
         "args": [
           "-noexit",
           "-command",
-          "Write-Host 'ABBV20xx on DS20xx, using custom (or as-is) AccuTheme-2021' -ForegroundColor Yellow;",
+          "Write-Host 'ABBV20xx on DS20xx, using custom (or as-is) AccuTheme Bs4' -ForegroundColor Yellow;",
           "Write-Host 'Reminder: see the .code-workspace file to update terminal startup commands' -ForegroundColor DarkCyan;",
           "Write-Host '';",
           "nvm list | % { if($_.Contains('*')) { 'NVM: NodeJS v' + $_.Trim(' *') } } ;",
@@ -52,10 +44,25 @@
       }
     },
     "NOTE": "Using the primary color from branding, #0968b1, alpha at 75% (C0) for the title bar, 50% activity, and 25% status",
+    "peacock.color": "#0968b1",
     "workbench.colorCustomizations": {
-      "titleBar.activeBackground": "#0968b1c0",
-      "activityBar.background": "#0968b180",
-      "statusBar.background": "#0968b140"
+      "activityBar.activeBackground": "#0b85e2",
+      "activityBar.background": "#0b85e2",
+      "activityBar.foreground": "#e7e7e7",
+      "activityBar.inactiveForeground": "#e7e7e799",
+      "activityBarBadge.background": "#fba4d5",
+      "activityBarBadge.foreground": "#15202b",
+      "commandCenter.border": "#e7e7e799",
+      "sash.hoverBorder": "#0b85e2",
+      "statusBar.background": "#0968b1",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#0b85e2",
+      "statusBarItem.remoteBackground": "#0968b1",
+      "statusBarItem.remoteForeground": "#e7e7e7",
+      "titleBar.activeBackground": "#0968b1",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#0968b199",
+      "titleBar.inactiveForeground": "#e7e7e799"
     },
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.patterns": {
@@ -63,5 +70,15 @@
       "*.code-workspace": ".env, .browserslistrc, .eslint*, .*.json, .git*, .editorconfig, .nvmrc, .*ignore, gulp*.js",
       "README.md": "READ*",
     }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-dotnettools.csdevkit",
+      "thekalinga.bootstrap4-vscode",
+      "aaron-bond.better-comments",
+      "alefragnani.project-manager",
+      "natizyskunk.sftp",
+      "gruntfuggly.todo-tree"
+    ]
   }
 }
