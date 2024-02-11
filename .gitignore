@@ -61,9 +61,9 @@ dnn/web.config
 !**/_default/EditBarTheme.css
 
 # .sln/.csproj VS Code IntelliSense detritus to ignore
-obj/
 .vs/
 bin/
+obj/
 
 # [to be removed?, we don't do this anymore ] if AccuCode is setup as a separate project (.gitmodules, /App_Code), uncomment this
 # app/App_Code/
